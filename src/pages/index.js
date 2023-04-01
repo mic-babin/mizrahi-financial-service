@@ -116,7 +116,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulSections(filter: { node_locale: { eq: "fr" } }) {
+    allContentfulSections(filter: { node_locale: { eq: $language } }) {
       edges {
         node {
           id
@@ -172,7 +172,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulContact(filter: { node_locale: { eq: "fr" } }) {
+    allContentfulContact(filter: { node_locale: { eq: $language } }) {
       edges {
         node {
           id
@@ -193,7 +193,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulNavLinks(filter: { node_locale: { eq: "fr" } }) {
+    allContentfulNavLinks(filter: { node_locale: { eq: $language } }) {
       edges {
         node {
           links {
@@ -205,7 +205,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulFooter(filter: { node_locale: { eq: "fr" } }) {
+    allContentfulFooter(filter: { node_locale: { eq: $language } }) {
       nodes {
         id
         copyrights

@@ -18,10 +18,10 @@ const siteUrl = "http://localhost:8000/";
 module.exports = {
   siteMetadata: {
     title: `Mizrahi - Services financiers`,
-    description: ``,
-    twitterUsername: ``,
-    image: `/mizrahi.png`,
-    siteUrl: `https://mizrahi.???/`,
+    description: `//TODO`,
+    twitterUsername: `@mizrahi`,
+    image: `mz.svg`,
+    siteUrl: `https://mizrahi.com/`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -29,10 +29,11 @@ module.exports = {
     `gatsby-transformer-sharp`,
     "gatsby-plugin-netlify",
     `gatsby-plugin-sass`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        excludes: ["/**/404", "/**/success", "/**/404.html"],
+        excludes: ["/**/404", "/**/404.html"],
       },
     },
     {

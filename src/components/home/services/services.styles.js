@@ -24,7 +24,7 @@ export const Paragraph = styled(motion.div)`
     line-height: 32px;
   }
 
-  h6 {
+  h3 {
     font-size: 32px;
     line-height: 46px;
     padding-bottom: 30px;

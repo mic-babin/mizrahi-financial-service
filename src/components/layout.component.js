@@ -6,6 +6,7 @@ import "../assets/styles/accordion.css";
 import { useEffect } from "react";
 import Header from "./navigation/header/header.component";
 import Footer from "./navigation/footer/footer.component";
+import SEO from "./seo";
 
 const Layout = ({ menu, showPage, children, navLinks, footer }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -36,5 +37,6 @@ const Layout = ({ menu, showPage, children, navLinks, footer }) => {
     </div>
   );
 };
+export const Head = () => <SEO />;
 
 export default Layout;
