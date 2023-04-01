@@ -1,209 +1,227 @@
-// import React from "react";
-// import Layout from "../components/layout.component";
-// import { graphql } from "gatsby";
-// import { useState, useEffect } from "react";
-// import styled from "styled-components";
-// import Loader from "../components/common/loader.component";
-// import { NavLink } from "../components/styled-components/nav-link.style";
-// import { Trans } from "gatsby-plugin-react-i18next";
-// import { SEO } from "../components/seo";
+import * as React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout.component";
+import { ParallaxProvider } from "react-scroll-parallax";
+import { SEO } from "../components/seo";
+import { useState, useEffect } from "react";
+import FirstLoader from "../components/common/first-loader.component";
+import Hero from "../components/home/hero/hero.component";
+import About from "../components/home/about/about.component";
+import Team from "../components/home/team/team.component";
+import Philosophy from "../components/home/philosophy/philosophy.component";
+import Services from "../components/home/services/services.component";
+import Contact from "../components/home/contact/contact.component";
 
-// const Error = (props) => {
-//   const path = props.path;
-//   const menu = props.data.allContentfulHeader.edges[0].node;
-//   const contact = props.data.allContentfulPage.edges[1].node.sections;
+export default function Homepage(props) {
+  const {
+    data: {
+      allContentfulSections,
+      allContentfulContact,
+      allContentfulNavLinks,
+      allContentfulFooter,
+    },
+  } = props;
 
-//   const [showContact, setShowContact] = useState(false);
-//   const [showPage, setShowPage] = useState(false);
+  const navLinks = allContentfulNavLinks.edges[0].node.links;
+  const menu = allContentfulSections.edges.filter(
+    (section) => section.node.title === "TopNav"
+  );
+  const services = allContentfulSections.edges.filter(
+    (section) => section.node.title === "Services"
+  )[0].node;
+  const support = allContentfulSections.edges.filter(
+    (section) => section.node.title === "Notre démarche d’accompagnement"
+  )[0].node;
+  const philosophy = allContentfulSections.edges.filter(
+    (section) => section.node.title === "Philosophie"
+  )[0].node;
+  const team = allContentfulSections.edges.filter(
+    (section) => section.node.title === "L'équipe"
+  )[0].node;
+  const teamMember = allContentfulSections.edges.filter(
+    (section) => section.node.title === "Membre de l'équipe"
+  )[0].node;
+  const hero = allContentfulSections.edges.filter(
+    (section) => section.node.title === "Accueil"
+  )[0].node;
+  const about = allContentfulSections.edges.filter(
+    (section) => section.node.title === "À propos"
+  )[0].node;
+  const contact = allContentfulContact.edges[0].node;
+  const footer = allContentfulFooter.nodes[0];
 
-//   useEffect(() => {
-//     setTimeout(() => {
-//       setShowPage(true);
-//     }, 1);
-//   }, []);
+  const [showPage, setShowPage] = useState(true);
+  const [showLoader, setShowLoader] = useState(false);
 
-//   return (
-//     <Layout
-//       menu={menu}
-//       contact={contact}
-//       showContact={showContact}
-//       setShowContact={setShowContact}
-//       headerColor="#000000"
-//       path={path}
-//       showPage={showPage}
-//     >
-//       {!showPage && <Loader />}
-//       <Section>
-//         <h1 className="my-5">404</h1>
-//         <p className="px-3">
-//           <Trans>message</Trans>
-//         </p>
-//         <NavLink to="/">
-//           <Trans>close</Trans>
-//         </NavLink>
-//       </Section>
-//     </Layout>
-//   );
-// };
+  useEffect(() => {
+    // let about = document.getElementById("about");
+    // if (about && props.location.hash === "#a-propos") {
+    //   about.scrollIntoView({ behavior: "smooth" }, true);
+    // }
 
-// export default Error;
-// export const Head = () => <SEO title="404 - " />;
-// const Section = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   min-height: 80vh;
-//   width: 100vw;
-//   padding-top: 150px;
-//   padding-bottom: 100px;
-//   padding-left: 15px;
-//   padding-right: 15px;
-//   text-align: center;
-//   background: black;
-//   color: white;
-//   border-bottom: 2px solid white;
+    if (showLoader) {
+      setTimeout(() => {
+        setShowLoader(false);
+      }, 1800);
+    }
+    if (!showPage) {
+      setTimeout(() => {
+        setShowPage(true);
+      }, 1);
+    }
 
-//   h1 {
-//     font-size: 18vw;
-//     line-height: 18vw;
-//   }
-// `;
+    return () => {};
+  }, [
+    showPage,
+    showLoader,
+    // props.location.hash
+  ]);
 
-// export const query = graphql`
-//   query ($language: String!) {
-//     locales: allLocale(
-//       filter: { ns: { in: ["index"] }, language: { eq: $language } }
-//     ) {
-//       edges {
-//         node {
-//           ns
-//           data
-//           language
-//         }
-//       }
-//     }
-//     allContentfulHeader(filter: { node_locale: { eq: $language } }) {
-//       edges {
-//         node {
-//           closeTitle
-//           navLinks {
-//             id
-//             links {
-//               ... on ContentfulLink {
-//                 id
-//                 text
-//                 url
-//               }
-//               ... on ContentfulShortText {
-//                 id
-//                 text
-//               }
-//               ... on ContentfulSocials {
-//                 id
-//                 title
-//                 socialLinks {
-//                   id
-//                   text
-//                   url
-//                 }
-//               }
-//             }
-//           }
-//           langs: language {
-//             id
-//             value
-//           }
-//           featured: image {
-//             gatsbyImageData(placeholder: BLURRED)
-//           }
-//           logo {
-//             url
-//           }
-//           copyrights {
-//             raw
-//           }
-//         }
-//       }
-//     }
-//     allContentfulPage(
-//       filter: {
-//         title: { in: ["Contact", "Team", "Équipe"] }
-//         node_locale: { eq: $language }
-//       }
-//     ) {
-//       edges {
-//         node {
-//           sections {
-//             ... on ContentfulSection {
-//               id
-//               title
-//               components {
-//                 ... on ContentfulContacts {
-//                   id
-//                   contactInformations {
-//                     id
-//                     address
-//                     type
-//                   }
-//                 }
-//               }
-//               link {
-//                 ... on ContentfulShortText {
-//                   id
-//                   text
-//                 }
-//                 ... on ContentfulLink {
-//                   id
-//                   text
-//                   url
-//                 }
-//               }
-//               textFields {
-//                 ... on ContentfulParagraph {
-//                   id
-//                   reference
-//                   childContentfulParagraphTextTextNode {
-//                     text
-//                   }
-//                 }
-//               }
-//               images {
-//                 gatsbyImageData(placeholder: BLURRED)
-//               }
-//             }
-//             ... on ContentfulTeamMember {
-//               id
-//               name
-//               title
-//               descriptions {
-//                 id
-//                 text {
-//                   text
-//                 }
-//               }
-//               email
-//               phone
-//               image {
-//                 gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
-//               }
-//             }
-//             ... on ContentfulForm {
-//               id
-//               title
-//               formFields {
-//                 id
-//                 fieldName
-//                 label
-//                 type
-//                 required
-//                 node_locale
-//               }
-//               button
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+  return (
+    <div>
+      <Layout
+        menu={menu}
+        navLinks={navLinks}
+        showPage={showPage}
+        footer={footer}
+      >
+        {/* <FirstLoader image={loader} show={showLoader}></FirstLoader> */}
+        {showPage && !showLoader && (
+          <ParallaxProvider>
+            <Hero hero={hero} />
+            <About about={about} />
+            <Team team={team} teamMember={teamMember} />
+            <Philosophy philosophy={philosophy} />
+            <Services services={services} support={support} />
+            <Contact contactData={contact} />
+          </ParallaxProvider>
+        )}
+      </Layout>
+    </div>
+  );
+}
+
+export const Head = () => <SEO />;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(
+      filter: { ns: { in: ["index"] }, language: { eq: $language } }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+    allContentfulSections(filter: { node_locale: { eq: "fr" } }) {
+      edges {
+        node {
+          id
+          title
+          node_locale
+          components {
+            ... on ContentfulLink {
+              id
+              text
+              url
+            }
+            ... on ContentfulHeaderAndText {
+              id
+              title
+              kicker {
+                raw
+              }
+              subtitlte {
+                subtitlte
+              }
+              paragraphs {
+                raw
+              }
+            }
+            ... on ContentfulImages {
+              id
+              images {
+                id
+                gatsbyImageData
+              }
+            }
+            ... on ContentfulImage {
+              id
+              image {
+                gatsbyImageData
+              }
+            }
+            ... on ContentfulTeamMember {
+              id
+              name
+              title
+              description
+              bio {
+                raw
+              }
+              email
+              linkedIn
+              image {
+                gatsbyImageData
+              }
+            }
+          }
+        }
+      }
+    }
+    allContentfulContact(filter: { node_locale: { eq: "fr" } }) {
+      edges {
+        node {
+          id
+          title
+          address
+          contact {
+            id
+            text
+            url
+            type
+          }
+          contactForm {
+            id
+            name
+            type
+            placeHolder
+          }
+        }
+      }
+    }
+    allContentfulNavLinks(filter: { node_locale: { eq: "fr" } }) {
+      edges {
+        node {
+          links {
+            id
+            text
+            url
+            type
+          }
+        }
+      }
+    }
+    allContentfulFooter(filter: { node_locale: { eq: "fr" } }) {
+      nodes {
+        id
+        copyrights
+        entreprise
+        conception {
+          raw
+        }
+        plan
+        notes
+        plaintesEtDiffrents {
+          image {
+            title
+            publicUrl
+          }
+        }
+      }
+    }
+  }
+`;
