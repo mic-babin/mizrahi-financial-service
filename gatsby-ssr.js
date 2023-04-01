@@ -7,7 +7,7 @@ export const onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
       rel="preload"
       href="/fonts/SF-Light.ttf"
       as="font"
-      type="font/otf"
+      type="font/ttf"
       crossOrigin="anonymous"
       key="SF-Display-Light"
     />,
@@ -21,9 +21,9 @@ export const onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
     />,
     <link
       rel="preload"
-      href="/fonts/TimeNow-Light.otf"
+      href="/fonts/TimeNow-Light.ttf"
       as="font"
-      type="font/otf"
+      type="font/ttf"
       crossOrigin="anonymous"
       key="TimesNow"
     />,
