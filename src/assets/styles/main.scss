@@ -1,0 +1,49 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1250px,
+  xxl: 1600px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1190px,
+  xxl: 1550px,
+);
+
+@import "~bootstrap/scss/bootstrap";
+@import "react-multi-carousel/lib/styles.css";
+
+@font-face {
+  font-family: "SF-Display-Regular";
+  src: local("SF-Display-Regular"),
+    url(../../../static/fonts/SF-Regular.ttf) format("truetype");
+  font-display: auto;
+}
+@font-face {
+  font-family: "SF-Display-Light";
+  src: local("SF-Display-Light"),
+    url(../../../static/fonts/SF-Light.ttf) format("truetype");
+  font-display: auto;
+}
+@font-face {
+  font-family: "TimesNow";
+  src: local("TimesNow"),
+    url(../../../static/fonts/TimesNow-Light.ttf) format("truetype");
+  font-display: auto;
+}
+
+body {
+  font-family: "SF-Display-Regular";
+  font-size: 14px;
+  background-color: #e7e3da;
+  color: #2b2929;
+}
+
+.pointer {
+  cursor: pointer;
+}

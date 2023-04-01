@@ -1,0 +1,37 @@
+.accordion-button {
+  background-color: transparent;
+}
+.accordion-button:not(.collapsed) {
+  color: black;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  border-color: none;
+  outline: 0;
+  box-shadow: none;
+}
+.accordion-item {
+  border: none;
+}
+
+.accordion-button {
+  padding: 1rem 0;
+  max-width: 400px;
+}
+
+.accordion-button::after {
+  width: 0;
+}
+
+.accordion-body {
+  padding: 1rem 0;
+  font-family: "Neue-Italic";
+  max-width: 400px;
+}
+
+.accordion {
+  padding-bottom: 2rem;
+}
