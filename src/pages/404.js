@@ -4,7 +4,7 @@ import Layout from "../components/layout.component";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { SEO } from "../components/seo";
 import { useState, useEffect } from "react";
-import FirstLoader from "../components/common/first-loader.component";
+
 import Hero from "../components/home/hero/hero.component";
 import About from "../components/home/about/about.component";
 import Team from "../components/home/team/team.component";
