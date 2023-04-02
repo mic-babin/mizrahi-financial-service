@@ -15,7 +15,7 @@ const Contact = ({ contactData }) => {
     <Wrapper>
       <div className="container">
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-6 ps-3 ps-lg-0 pb-5 pb-lg-0 mb-5 mb-lg-0">
             {title && <H2>{title}</H2>}
             <H3>ADRESSE</H3>
             {address &&

@@ -23,15 +23,25 @@ const PhilosophyCarousel = ({ components }) => {
       items: 2,
       partialVisibilityGutter: 30, // this is needed to tell the amount of px that should be visible.
     },
-    tablet: {
+    laptop: {
       breakpoint: { max: 1599, min: 1250 },
       items: 2,
       partialVisibilityGutter: 30, // this is needed to tell the amount of px that should be visible.
     },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
+    tablet: {
+      breakpoint: { max: 1249, min: 992 },
       items: 1,
-      partialVisibilityGutter: 30, // this is needed to tell the amount of px that should be visible.
+      partialVisibilityGutter: 200, // this is needed to tell the amount of px that should be visible.
+    },
+    mobile: {
+      breakpoint: { max: 991, min: 577 },
+      items: 1,
+      partialVisibilityGutter: 50, // this is needed to tell the amount of px that should be visible.
+    },
+    phone: {
+      breakpoint: { max: 576, min: 0 },
+      items: 1,
+      partialVisibilityGutter: -110, // this is needed to tell the amount of px that should be visible.
     },
   };
 
@@ -43,7 +53,13 @@ const PhilosophyCarousel = ({ components }) => {
         responsive={responsive}
         infinite={true}
         autoPlaySpeed={1000}
-        removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+        removeArrowOnDeviceType={[
+          "desktop",
+          "laptop",
+          "tablet",
+          "mobile",
+          "phone",
+        ]}
         keyBoardControl={true}
         customButtonGroup={<CarouselButton position={buttonPosition} />}
       >

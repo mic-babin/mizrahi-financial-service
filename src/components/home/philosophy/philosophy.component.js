@@ -8,7 +8,7 @@ const Philosophy = ({ philosophy }) => {
 
   return (
     <Wrapper>
-      <div className="container">
+      <div className="container no-left">
         <SectionTitle title={title} />
 
         <PhilosophyCarousel components={components} />

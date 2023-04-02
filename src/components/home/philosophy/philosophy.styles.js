@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -6,28 +5,42 @@ export const Wrapper = styled.div`
   padding-bottom: 100px;
   border-bottom: 1px solid #2b2929;
 
+  @media (max-width: 991px) {
+    padding-bottom: 75px;
+  }
+  @media (max-width: 767px) {
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: 576px) {
+    .container.no-left {
+      max-width: calc(100% - (100% - 540px) / 2) !important;
+      margin-right: 0;
+    }
+  }
+
   @media (min-width: 768px) {
-    .container {
+    .container.no-left {
       max-width: calc(100% - (100% - 720px) / 2) !important;
       margin-right: 0;
     }
   }
 
   @media (min-width: 992px) {
-    .container {
+    .container.no-left {
       max-width: calc(100% - (100% - 960px) / 2) !important;
       margin-right: 0;
     }
   }
 
   @media (min-width: 1250px) {
-    .container {
+    .container.no-left {
       max-width: calc(100% - (100% - 1190px) / 2) !important;
       margin-right: 0;
     }
   }
   @media (min-width: 1600px) {
-    .container {
+    .container.no-left {
       max-width: calc(100% - (100% - 1550px) / 2) !important;
       margin-right: 0;
     }
@@ -35,7 +48,21 @@ export const Wrapper = styled.div`
 `;
 export const CarouselWrapper = styled.div`
   position: relative;
-  margin-top: 120px;
+  margin-top: 88px;
+
+  @media (max-width: 1249px) {
+    margin-top: 100px;
+  }
+
+  @media (max-width: 991px) {
+    margin-top: 115px;
+  }
+  @media (max-width: 767px) {
+    margin-top: 110px;
+  }
+  @media (max-width: 576px) {
+    margin-top: 105px;
+  }
 `;
 
 export const Item = styled.div`
@@ -47,6 +74,10 @@ export const Item = styled.div`
   @media (max-width: 1599px) {
     margin-right: 80px;
     padding-right: 40px;
+  }
+  @media (max-width: 767px) {
+    margin-right: 60px;
+    padding-right: 30px;
   }
 `;
 

@@ -7,14 +7,17 @@ export const Wrapper = styled.div`
   border-bottom: 1px solid #2b2929;
   padding-left: 70px;
   background-color: #e7e3da;
-  @media (max-width: 767px) {
+  @media (max-width: 1249px) {
     padding-left: 30px;
+  }
+  @media (max-width: 400px) {
+    padding-left: 0px;
   }
 `;
 
 export const Logo = styled.img`
   height: 90px;
-  @media (max-width: 767px) {
+  @media (max-width: 576px) {
     height: 70px;
   }
 `;
@@ -30,6 +33,19 @@ export const Button = styled(motion.div)`
   justify-content: center;
   border-left: 1px solid #2b2929;
 
+  @media (max-width: 1249px) {
+    width: 12vw;
+  }
+  @media (max-width: 991px) {
+    width: 120px;
+  }
+  @media (max-width: 576px) {
+    width: 90px;
+  }
+  @media (max-width: 400px) {
+    width: 80px;
+  }
+
   .link {
     display: flex;
     align-items: center;
@@ -44,6 +60,11 @@ export const Button = styled(motion.div)`
 
     &:hover {
       background-color: #f7f7f1;
+    }
+
+    @media (max-width: 1249px) {
+      font-size: 12px;
+      letter-spacing: 2.4px;
     }
   }
 `;

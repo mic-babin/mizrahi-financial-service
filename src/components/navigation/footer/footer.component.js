@@ -25,7 +25,7 @@ const Footer = ({ navLinks, footer }) => {
     <Wrapper>
       <div className="container">
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-6 d-flex flex-column justify-content-center text-center text-sm-start d-sm-block">
             <Logo src={LogoSrc} alt="" />
             <Copyrights>
               <div>{copyrights}</div>
@@ -33,18 +33,18 @@ const Footer = ({ navLinks, footer }) => {
               <div>{renderRichText(conception)}</div>
             </Copyrights>
           </div>
-          <div className="col-lg-3">
+          <div className="col-sm-6 col-lg-3 d-flex flex-column justify-content-center text-center text-sm-start d-sm-block">
             <H3>{plan}</H3>
             <div className="row">
               {navLinks &&
                 navLinks.map((link) => (
-                  <LinkWrapper className="col-lg-6" to={link.url} key={link.id}>
+                  <LinkWrapper className="col-sm-6" to={link.url} key={link.id}>
                     {link.text}
                   </LinkWrapper>
                 ))}
             </div>
           </div>
-          <div className="col-lg-3 d-flex justify-content-end pe-lg-5">
+          <div className="col-sm-6 col-lg-3 d-flex justify-content-sm-end pe-lg-5 d-flex flex-column justify-content-center text-center text-sm-start d-sm-block">
             <div>
               <H3>{notes}</H3>
               <LinkWrapper

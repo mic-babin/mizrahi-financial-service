@@ -6,6 +6,20 @@ export const Wrapper = styled.div`
   padding-bottom: 150px;
   border-bottom: 1px solid #2b2929;
   background-color: #eeede8;
+
+  @media (max-width: 1249px) {
+    padding-top: 150px;
+    padding-bottom: 100px;
+  }
+  @media (max-width: 991px) {
+    padding-top: 100px;
+    padding-bottom: 75px;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 75px;
+    padding-bottom: 50px;
+  }
 `;
 
 export const H2 = styled(motion.h2)`
@@ -22,6 +36,28 @@ export const H3 = styled(motion.h3)`
   &:nth-of-type(2) {
     padding-top: 70px;
   }
+
+  @media (max-width: 991px) {
+    padding-top: 70px;
+
+    &:nth-of-type(2) {
+      padding-top: 60px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding-top: 60px;
+
+    &:nth-of-type(2) {
+      padding-top: 50px;
+    }
+  }
+  @media (max-width: 576px) {
+    padding-top: 50px;
+
+    &:nth-of-type(2) {
+      padding-top: 40px;
+    }
+  }
 `;
 
 export const Address = styled.div`
@@ -31,6 +67,16 @@ export const Address = styled.div`
   color: #2b2929;
   display: block;
   text-decoration: none;
+
+  @media (max-width: 1599px) {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  @media (max-width: 1249px) {
+    font-size: 18px;
+    line-height: 29px;
+  }
 
   &:hover {
     color: #2b2929;

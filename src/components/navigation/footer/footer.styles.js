@@ -16,8 +16,9 @@ export const Wrapper = styled.div`
 export const Logo = styled.img`
   margin: -2.3rem;
   height: 179px;
-  @media (max-width: 767px) {
-    height: 70px;
+  @media (max-width: 576px) {
+    margin: 0rem;
+    height: 150px;
   }
 `;
 
@@ -27,6 +28,13 @@ export const H3 = styled(motion.h3)`
   padding-top: 25px;
   padding-bottom: 1rem;
   text-transform: uppercase;
+
+  @media (max-width: 991px) {
+    padding-top: 50px;
+  }
+  @media (max-width: 576px) {
+    padding-top: 30px;
+  }
 `;
 
 export const LinkWrapper = styled(Link)`

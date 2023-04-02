@@ -15,4 +15,8 @@ export const Links = styled.div`
   justify-content: end;
   align-items: center;
   font-family: "SF-Display-Regular";
+
+  @media (max-width: 1249px) {
+    padding-right: 30px;
+  }
 `;

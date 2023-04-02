@@ -4,6 +4,10 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   margin-top: 25px;
   cursor: pointer;
+
+  @media (max-width: 576px) {
+    margin-top: 0px;
+  }
 `;
 
 export const Toggler = styled.div`
@@ -18,6 +22,10 @@ export const Toggler = styled.div`
   @media (max-width: 1599px) {
     font-size: 36px;
   }
+
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
   span {
     margin-right: 20px;
     font-size: 14px;
@@ -26,15 +34,29 @@ export const Toggler = styled.div`
 `;
 
 export const Title = styled.div`
-  display: inline-block;
+  display: flex;
+  span {
+    display: block;
+    margin-top: 35px;
+    @media (max-width: 1599px) {
+      margin-top: 23px;
+    }
+    @media (max-width: 767px) {
+      margin-top: 17px;
+    }
+  }
 `;
 
 export const Body = styled(motion.div)`
   overflow: hidden;
   padding-left: 50px;
-  font-size: 18px;
-  line-height: 30px;
+
   font-family: "SF-Display-Light";
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 27px;
+  }
 `;
 
 export const ItemWrapper = styled.div`

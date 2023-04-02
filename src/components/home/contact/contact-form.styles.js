@@ -10,7 +10,7 @@ export const FormButton = styled.button`
   font-size: 18px;
   font-weight: 500;
   color: #2b2929;
-  padding: 5px 0;
+  padding: 5px;
   text-decoration: none;
   background-color: transparent;
   border: none;
@@ -24,6 +24,10 @@ export const Input = styled.input`
   background-color: #f7f7f1;
   margin-bottom: 22px;
 
+  @media (max-width: 576px) {
+    padding: 1.35rem 1.75rem;
+  }
+
   &:focus {
     border: 2px solid #2b2929;
     outline: none !important;
@@ -34,6 +38,11 @@ export const Input = styled.input`
     letter-spacing: 2.8px;
     color: #2b2929;
     text-transform: uppercase;
+
+    @media (max-width: 576px) {
+      font-size: 12px;
+      letter-spacing: 2.4px;
+    }
   }
 `;
 
@@ -45,6 +54,9 @@ export const TextArea = styled.textarea`
   padding: 1.35rem 2.2rem;
   background-color: #f7f7f1;
   margin-bottom: 30px;
+  @media (max-width: 576px) {
+    padding: 1.35rem 1.75rem;
+  }
 
   &:focus {
     border: 2px solid #2b2929;
@@ -56,6 +68,11 @@ export const TextArea = styled.textarea`
     letter-spacing: 2.8px;
     color: #2b2929;
     text-transform: uppercase;
+
+    @media (max-width: 576px) {
+      font-size: 12px;
+      letter-spacing: 2.4px;
+    }
   }
 `;
 

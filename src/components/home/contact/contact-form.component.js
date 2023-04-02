@@ -26,7 +26,6 @@ function ContactForm({ contactForm }) {
   const [show, setShow] = useState(false);
   const resetFields = () => {
     setFields(defaultFields);
-    console.log(fields);
   };
 
   const handleSubmit = async (event) => {
@@ -44,7 +43,6 @@ function ContactForm({ contactForm }) {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFields({ ...fields, [name]: value });
-    console.log(fields);
   };
 
   const handleClose = () => setShow(false);

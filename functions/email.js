@@ -16,8 +16,6 @@ const authData = nodemailer.createTransport({
 
 exports.handler = async (event) => {
   const method = event.httpMethod;
-
-  console.log(event.body);
   const {
     fields: { name, email, how, textarea },
   } = JSON.parse(event.body);

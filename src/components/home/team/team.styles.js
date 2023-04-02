@@ -7,6 +7,20 @@ export const Wrapper = styled.div`
   padding-bottom: 130px;
   border-bottom: 1px solid #2b2929;
   background-color: #eeede8;
+  @media (max-width: 1249px) {
+    padding-top: 70px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  @media (min-width: 576px) {
+    .container.no-left {
+      max-width: calc(100% - (100% - 540px) / 2) !important;
+      margin-right: 0;
+    }
+  }
 
   @media (min-width: 768px) {
     .container.no-left {
@@ -39,10 +53,21 @@ export const Wrapper = styled.div`
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: 44% 56%;
+  @media (max-width: 991px) {
+    display: block;
+  }
 `;
 
 export const TitlehWrapper = styled.div`
   max-width: 82.1%;
+
+  @media (max-width: 991px) {
+    max-width: 90%;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+  }
 `;
 
 export const Paragraph = styled(motion.div)`
@@ -56,6 +81,25 @@ export const Paragraph = styled(motion.div)`
     font-size: 30px;
     line-height: 41px;
   }
+
+  @media (max-width: 1249px) {
+    font-size: 28px;
+    line-height: 38px;
+    padding-top: 0px;
+  }
+  @media (max-width: 991px) {
+    font-size: 28px;
+    line-height: 38px;
+    padding-right: 50px;
+  }
+  @media (max-width: 767px) {
+    font-size: 22px;
+    line-height: 32px;
+    padding-top: 0px;
+  }
+  @media (max-width: 576px) {
+    padding-right: 0;
+  }
 `;
 
 export const CarouselWrapper = styled.div`
@@ -68,21 +112,42 @@ export const CarouselWrapper = styled.div`
   .react-multi-carousel-item.react-multi-carousel-item--active {
     opacity: 1 !important;
   }
+  @media (max-width: 991px) {
+    padding-top: 150px;
+    padding-left: 0;
+  }
 `;
 
 export const Card = styled.div`
   padding: 0 1.9rem;
   position: relative;
   cursor: default;
+
+  @media (max-width: 991px) {
+    padding: 0px;
+    padding-right: 3.8rem;
+  }
+  @media (max-width: 767px) {
+    padding-right: 2.5rem;
+  }
+  @media (max-width: 576px) {
+    padding-right: 2rem;
+  }
 `;
 
 export const ImageWrapper = styled.div`
   max-height: 700px;
+  @media (max-width: 1249px) {
+    max-height: 600px;
+  }
 `;
 
 export const Image = styled(GatsbyImage)`
   border-radius: 26px;
   max-height: 700px;
+  @media (max-width: 1249px) {
+    max-height: 600px;
+  }
 `;
 
 export const Name = styled.div`
@@ -90,6 +155,10 @@ export const Name = styled.div`
   padding-bottom: 15px;
   font-size: 42px;
   font-family: "TimesNow";
+
+  @media (max-width: 576px) {
+    font-size: 30px;
+  }
 
   span {
     font-size: 22px;
@@ -102,6 +171,16 @@ export const Description = styled.div`
   font-family: "SF-Display-Light";
   font-size: 22px;
   line-height: 32px;
+
+  @media (max-width: 1599px) {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  @media (max-width: 1249px) {
+    font-size: 18px;
+    line-height: 29px;
+  }
 `;
 
 export const Contact = styled.div`
@@ -114,6 +193,16 @@ export const Contact = styled.div`
     line-height: 27px;
     color: #2b2929;
     text-decoration: none;
+
+    @media (max-width: 1599px) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    @media (max-width: 1249px) {
+      font-size: 18px;
+      line-height: 25px;
+    }
 
     &:first-child {
       border-bottom: 1px solid #2b2929;

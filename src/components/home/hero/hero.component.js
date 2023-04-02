@@ -23,16 +23,12 @@ const Hero = ({ hero }) => {
         <H1>{renderRichText(kicker)}</H1>
       </TextWrapper>
       <Images>
-        <Col>
+        <Col className="d-none d-md-block">
           <Parallax translateY={[-3, 30]}>
-            <Image
-              className="image-0"
-              image={getImage(images[0].gatsbyImageData)}
-              alt=""
-            />
+            <Image image={getImage(images[0].gatsbyImageData)} alt="" />
           </Parallax>
         </Col>
-        <Col>
+        <Col className="d-none d-lg-block">
           <Parallax translateY={[-2, 15]}>
             <Image
               className="image-1"
