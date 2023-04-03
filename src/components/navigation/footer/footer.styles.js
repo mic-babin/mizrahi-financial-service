@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 
   background-color: #e7e3da;
   @media (max-width: 767px) {
-    padding-left: 30px;
+    padding-left: 0px;
   }
 `;
 
