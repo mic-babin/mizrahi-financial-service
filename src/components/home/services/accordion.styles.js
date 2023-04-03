@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(motion.div)`
   margin-top: 25px;
   cursor: pointer;
 
@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Toggler = styled.div`
+export const Toggler = styled(motion.div)`
   width: 100%;
   padding: 2rem 1rem;
   display: flex;

@@ -21,7 +21,19 @@ const Team = ({ team, teamMember }) => {
         <div className="container no-left">
           <Grid>
             <div id="col">
-              <Paragraph id="paragraph">{renderRichText(paragraphs)}</Paragraph>
+              <Paragraph
+                id="paragraph"
+                whileInView={{ x: 0, opacity: 1 }}
+                initial={{ x: -200, opacity: 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.2,
+                  type: "spring",
+                }}
+                viewport={{ once: true }}
+              >
+                {renderRichText(paragraphs)}
+              </Paragraph>
             </div>
 
             <TeamCarousel teamMember={teamMember} colW={0} paragraphW={0} />

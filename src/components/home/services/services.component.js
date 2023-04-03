@@ -19,7 +19,18 @@ const services = ({ services, support }) => {
           </TitleWrapper>
           <div className="d-flex justify-content-end">
             <LeftCol>
-              <Paragraph>{renderRichText(paragraphs)}</Paragraph>
+              <Paragraph
+                whileInView={{ x: 0, opacity: 1 }}
+                initial={{ x: -200, opacity: 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.3,
+                  type: "spring",
+                }}
+                viewport={{ once: true }}
+              >
+                {renderRichText(paragraphs)}
+              </Paragraph>
               <Accordion support={support} />
             </LeftCol>
           </div>

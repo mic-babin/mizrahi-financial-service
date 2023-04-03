@@ -102,7 +102,7 @@ export const Paragraph = styled(motion.div)`
   }
 `;
 
-export const CarouselWrapper = styled.div`
+export const CarouselWrapper = styled(motion.div)`
   position: relative;
   padding-left: 30px;
 

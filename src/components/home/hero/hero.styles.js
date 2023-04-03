@@ -61,7 +61,7 @@ export const Images = styled.div`
   }
 `;
 
-export const Col = styled.div`
+export const Col = styled(motion.div)`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -82,12 +82,17 @@ export const Image = styled(GatsbyImage)`
   }
   &.image-1 {
     height: 14.6vw;
+    margin-top: 5.1vw;
+    @media (max-width: 767px) {
+      margin-top: 0vw;
+    }
   }
   &.image-2 {
     height: 21.4vw;
   }
   &.image-3 {
     height: 43vw;
+    margin-top: 8.3vw;
 
     @media (max-width: 767px) {
       margin-top: 0vw;

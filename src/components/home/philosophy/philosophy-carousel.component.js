@@ -46,7 +46,16 @@ const PhilosophyCarousel = ({ components }) => {
   };
 
   return (
-    <CarouselWrapper>
+    <CarouselWrapper
+      whileInView={{ x: 0, opacity: 1 }}
+      initial={{ x: 200, opacity: 0 }}
+      transition={{
+        duration: 0.4,
+        delay: 0.3,
+        type: "spring",
+      }}
+      viewport={{ once: true }}
+    >
       <Carousel
         partialVisible={true}
         renderButtonGroupOutside={true}

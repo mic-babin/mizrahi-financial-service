@@ -43,8 +43,27 @@ const AccordionItem = ({
   }, [open, bodyControls, closeOthers, currentIndex]);
 
   return (
-    <ItemWrapper onClick={() => toggleState(open)}>
-      <Toggler>
+    <ItemWrapper
+      onClick={() => toggleState(open)}
+      whileInView={{ y: 0, opacity: 1 }}
+      initial={{ y: 200, opacity: 0 }}
+      transition={{
+        duration: 0.4,
+        delay: 0.3,
+        type: "spring",
+      }}
+      viewport={{ once: true }}
+    >
+      <Toggler
+        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ x: -200, opacity: 0 }}
+        transition={{
+          duration: 0.4,
+          delay: 0.2,
+          type: "spring",
+        }}
+        viewport={{ once: true }}
+      >
         <Title>
           <span>{`0${index + 1}.`}</span>
           {title}

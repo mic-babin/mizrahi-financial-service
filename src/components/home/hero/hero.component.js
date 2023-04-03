@@ -21,16 +21,58 @@ const Hero = ({ hero }) => {
       <div className="scroll-to" id="accueil"></div>
       <Wrapper>
         <TextWrapper>
-          <H2>{title}</H2>
-          <H1>{renderRichText(kicker)}</H1>
+          <H2
+            whileInView={{ x: 0, opacity: 1 }}
+            initial={{ x: -200, opacity: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: 0.2,
+              type: "spring",
+            }}
+            viewport={{ once: true }}
+          >
+            {title}
+          </H2>
+          <H1
+            whileInView={{ x: 0, opacity: 1 }}
+            initial={{ x: -200, opacity: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: 0.3,
+              type: "spring",
+            }}
+            viewport={{ once: true }}
+          >
+            {renderRichText(kicker)}
+          </H1>
         </TextWrapper>
         <Images>
-          <Col className="d-none d-md-block">
-            <Parallax translateY={[-3, 30]}>
+          <Col
+            className="d-none d-md-block"
+            whileInView={{ y: 0, opacity: 1 }}
+            initial={{ y: 100, opacity: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: 0.4,
+              type: "spring",
+            }}
+            viewport={{ once: true }}
+          >
+            <Parallax translateY={[35, 60]}>
               <Image image={getImage(images[0].gatsbyImageData)} alt="" />
             </Parallax>
           </Col>
-          <Col className="d-none d-lg-block">
+          <Col
+            className="d-none d-lg-block"
+            whileInView={{ y: 0, opacity: 1 }}
+            initial={{ y: 100, opacity: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: 0.7,
+              type: "spring",
+            }}
+            viewport={{ once: true }}
+          >
             <Parallax translateY={[-2, 15]}>
               <Image
                 className="image-1"
@@ -45,7 +87,16 @@ const Hero = ({ hero }) => {
               />
             </Parallax>
           </Col>
-          <Col>
+          <Col
+            whileInView={{ y: 0, opacity: 1 }}
+            initial={{ y: 100, opacity: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: 0.5,
+              type: "spring",
+            }}
+            viewport={{ once: true }}
+          >
             <Parallax translateY={[2, 5]}>
               <Image
                 className="image-3"
@@ -54,7 +105,16 @@ const Hero = ({ hero }) => {
               />
             </Parallax>
           </Col>
-          <Col>
+          <Col
+            whileInView={{ y: 0, opacity: 1 }}
+            initial={{ y: 100, opacity: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: 0.6,
+              type: "spring",
+            }}
+            viewport={{ once: true }}
+          >
             <Parallax translateY={[-5, 30]}>
               <Image
                 className="image-4"

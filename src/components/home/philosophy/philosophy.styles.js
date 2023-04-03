@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Wrapper = styled.div`
   padding-top: 15px;
   padding-bottom: 100px;
   border-bottom: 1px solid #2b2929;
+  max-width: 100vw;
+  overflow: hidden;
 
   @media (max-width: 991px) {
     padding-bottom: 75px;
@@ -46,7 +49,7 @@ export const Wrapper = styled.div`
     }
   }
 `;
-export const CarouselWrapper = styled.div`
+export const CarouselWrapper = styled(motion.div)`
   position: relative;
   margin-top: 88px;
 

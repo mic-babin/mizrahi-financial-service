@@ -50,7 +50,16 @@ function ContactForm({ contactForm }) {
 
   return (
     <>
-      <Form>
+      <Form
+        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{
+          duration: 0.4,
+          delay: 0.2,
+          type: "spring",
+        }}
+        viewport={{ once: true }}
+      >
         {inputs &&
           inputs.map((content) => (
             <Input

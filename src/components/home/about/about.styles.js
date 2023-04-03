@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled(motion.div)`
   width: 100%;
   border-radius: 26px;
 `;

@@ -26,11 +26,31 @@ const About = ({ about }) => {
           </TopLine>
           <div className="row px-0">
             <div className="col-lg-6">
-              <ImageWrapper key={image.id}>
+              <ImageWrapper
+                key={image.id}
+                whileInView={{ x: 0, opacity: 1 }}
+                initial={{ x: -200, opacity: 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.3,
+                  type: "spring",
+                }}
+                viewport={{ once: true }}
+              >
                 <Image image={getImage(image.gatsbyImageData)} alt="" />
               </ImageWrapper>
             </div>
-            <Paragraph className="col-lg-6">
+            <Paragraph
+              className="col-lg-6"
+              whileInView={{ y: 0, opacity: 1 }}
+              initial={{ y: 200, opacity: 0 }}
+              transition={{
+                duration: 0.4,
+                delay: 0.4,
+                type: "spring",
+              }}
+              viewport={{ once: true }}
+            >
               {renderRichText(paragraphs)}
             </Paragraph>
           </div>
