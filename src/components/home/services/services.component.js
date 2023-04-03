@@ -10,19 +10,22 @@ const services = ({ services, support }) => {
   )[0];
 
   return (
-    <Wrapper>
-      <div className="container">
-        <TitleWrapper>
-          <SectionTitle title={title} kicker={kicker} />
-        </TitleWrapper>
-        <div className="d-flex justify-content-end">
-          <LeftCol>
-            <Paragraph>{renderRichText(paragraphs)}</Paragraph>
-            <Accordion support={support} />
-          </LeftCol>
+    <>
+      <div className="scroll-to" id="services"></div>
+      <Wrapper id="services">
+        <div className="container">
+          <TitleWrapper>
+            <SectionTitle title={title} kicker={kicker} />
+          </TitleWrapper>
+          <div className="d-flex justify-content-end">
+            <LeftCol>
+              <Paragraph>{renderRichText(paragraphs)}</Paragraph>
+              <Accordion support={support} />
+            </LeftCol>
+          </div>
         </div>
-      </div>
-    </Wrapper>
+      </Wrapper>
+    </>
   );
 };
 

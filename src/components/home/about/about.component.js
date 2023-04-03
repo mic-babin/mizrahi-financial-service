@@ -17,23 +17,26 @@ const About = ({ about }) => {
   const { image } = about.components.filter((c) => c.image != null)[0];
 
   return (
-    <Wrapper>
-      <div className="container">
-        <TopLine>
-          <SectionTitle title={title} kicker={kicker} />
-        </TopLine>
-        <div className="row px-0">
-          <div className="col-lg-6">
-            <ImageWrapper key={image.id}>
-              <Image image={getImage(image.gatsbyImageData)} alt="" />
-            </ImageWrapper>
+    <>
+      <div className="scroll-to" id="a-propos"></div>
+      <Wrapper>
+        <div className="container">
+          <TopLine>
+            <SectionTitle title={title} kicker={kicker} />
+          </TopLine>
+          <div className="row px-0">
+            <div className="col-lg-6">
+              <ImageWrapper key={image.id}>
+                <Image image={getImage(image.gatsbyImageData)} alt="" />
+              </ImageWrapper>
+            </div>
+            <Paragraph className="col-lg-6">
+              {renderRichText(paragraphs)}
+            </Paragraph>
           </div>
-          <Paragraph className="col-lg-6">
-            {renderRichText(paragraphs)}
-          </Paragraph>
         </div>
-      </div>
-    </Wrapper>
+      </Wrapper>
+    </>
   );
 };
 

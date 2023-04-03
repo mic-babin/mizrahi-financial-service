@@ -7,13 +7,16 @@ const Philosophy = ({ philosophy }) => {
   const { title, components } = philosophy;
 
   return (
-    <Wrapper>
-      <div className="container no-left">
-        <SectionTitle title={title} />
+    <>
+      <div className="scroll-to" id="philosophie"></div>
+      <Wrapper>
+        <div className="container no-left">
+          <SectionTitle title={title} />
 
-        <PhilosophyCarousel components={components} />
-      </div>
-    </Wrapper>
+          <PhilosophyCarousel components={components} />
+        </div>
+      </Wrapper>
+    </>
   );
 };
 

@@ -10,22 +10,25 @@ const Team = ({ team, teamMember }) => {
   )[0];
 
   return (
-    <Wrapper>
-      <div className="container">
-        <TitlehWrapper>
-          <SectionTitle title={title} kicker={kicker} />
-        </TitlehWrapper>
-      </div>
-      <div className="container no-left">
-        <Grid>
-          <div id="col">
-            <Paragraph id="paragraph">{renderRichText(paragraphs)}</Paragraph>
-          </div>
+    <>
+      <div className="scroll-to" id="equipe"></div>
+      <Wrapper id="equipe">
+        <div className="container">
+          <TitlehWrapper>
+            <SectionTitle title={title} kicker={kicker} />
+          </TitlehWrapper>
+        </div>
+        <div className="container no-left">
+          <Grid>
+            <div id="col">
+              <Paragraph id="paragraph">{renderRichText(paragraphs)}</Paragraph>
+            </div>
 
-          <TeamCarousel teamMember={teamMember} colW={0} paragraphW={0} />
-        </Grid>
-      </div>
-    </Wrapper>
+            <TeamCarousel teamMember={teamMember} colW={0} paragraphW={0} />
+          </Grid>
+        </div>
+      </Wrapper>
+    </>
   );
 };
 
