@@ -4,6 +4,7 @@ import { useAnimationControls } from "framer-motion";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { Toggler, Body, ItemWrapper, Title } from "./accordion.styles";
 import Circle from "./circle.component";
+import { useIsXSmall } from "../../../utils/media-query.hook";
 
 const AccordionItem = ({
   item,
@@ -19,9 +20,9 @@ const AccordionItem = ({
     setCurrentIndex(index);
     setOpen(!open);
   };
-
+  const isXSmall = useIsXSmall();
   const bodyControls = useAnimationControls();
-
+  console.log(isXSmall && index === 3);
   useEffect(() => {
     if (open) setCloseOthers(true);
 
@@ -55,6 +56,7 @@ const AccordionItem = ({
       viewport={{ once: true }}
     >
       <Toggler
+        style={{ lineHeight: isXSmall && index === 3 && "30px" }}
         whileInView={{ x: 0, opacity: 1 }}
         initial={{ x: -200, opacity: 0 }}
         transition={{
@@ -65,7 +67,9 @@ const AccordionItem = ({
         viewport={{ once: true }}
       >
         <Title>
-          <span>{`0${index + 1}.`}</span>
+          <span style={{ marginTop: isXSmall && index === 3 && "4px" }}>{`0${
+            index + 1
+          }.`}</span>
           {title}
         </Title>
 

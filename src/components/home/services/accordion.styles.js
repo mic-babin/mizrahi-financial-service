@@ -50,7 +50,8 @@ export const Title = styled.div`
 export const Body = styled(motion.div)`
   overflow: hidden;
   padding-left: 50px;
-
+  font-size: 18px;
+  line-height: 30px;
   font-family: "SF-Display-Light";
 
   @media (max-width: 767px) {

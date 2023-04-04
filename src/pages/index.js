@@ -158,7 +158,6 @@ export const query = graphql`
               id
               name
               title
-              description
               bio {
                 raw
               }
@@ -166,7 +165,10 @@ export const query = graphql`
               linkedIn
               image {
                 gatsbyImageData
+                description
               }
+              professionalTitles
+              bioButton
             }
           }
         }

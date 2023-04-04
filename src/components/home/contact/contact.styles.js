@@ -27,6 +27,10 @@ export const H2 = styled(motion.h2)`
   font-family: "TimesNow";
   font-size: 68px;
   line-height: 76px;
+  @media (max-width: 576px) {
+    font-size: 51px;
+    line-height: 57px;
+  }
 `;
 
 export const H3 = styled(motion.h3)`

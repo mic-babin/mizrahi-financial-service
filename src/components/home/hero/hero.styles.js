@@ -38,12 +38,15 @@ export const H1 = styled(motion.h1)`
 
   @media (max-width: 1249px) {
     font-size: 100px;
+    line-height: 100px;
   }
   @media (max-width: 767px) {
     font-size: 75px;
+    line-height: 75px;
   }
   @media (max-width: 576px) {
-    font-size: 60px;
+    font-size: 72px;
+    line-height: 72px;
   }
 `;
 
@@ -104,5 +107,11 @@ export const Image = styled(GatsbyImage)`
   }
   &.image-5 {
     height: 18.7vw;
+  }
+  @media (max-width: 767px) {
+    border-radius: 22px;
+  }
+  @media (max-width: 576px) {
+    border-radius: 18px;
   }
 `;

@@ -14,40 +14,6 @@ export const Wrapper = styled.div`
     padding-top: 20px;
     padding-bottom: 80px;
   }
-
-  @media (min-width: 576px) {
-    .container.no-left {
-      max-width: calc(100% - (100% - 540px) / 2) !important;
-      margin-right: 0;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .container.no-left {
-      max-width: calc(100% - (100% - 720px) / 2) !important;
-      margin-right: 0;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .container.no-left {
-      max-width: calc(100% - (100% - 960px) / 2) !important;
-      margin-right: 0;
-    }
-  }
-
-  @media (min-width: 1250px) {
-    .container.no-left {
-      max-width: calc(100% - (100% - 1190px) / 2) !important;
-      margin-right: 0;
-    }
-  }
-  @media (min-width: 1600px) {
-    .container.no-left {
-      max-width: calc(100% - (100% - 1550px) / 2) !important;
-      margin-right: 0;
-    }
-  }
 `;
 
 export const Grid = styled.div`
@@ -148,6 +114,12 @@ export const Image = styled(GatsbyImage)`
   @media (max-width: 1249px) {
     max-height: 600px;
   }
+  @media (max-width: 767px) {
+    border-radius: 22px;
+  }
+  @media (max-width: 576px) {
+    border-radius: 18px;
+  }
 `;
 
 export const Name = styled.div`
@@ -172,6 +144,15 @@ export const Description = styled.div`
   font-size: 22px;
   line-height: 32px;
 
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    padding-bottom: 8px;
+  }
+
   @media (max-width: 1599px) {
     font-size: 20px;
     line-height: 32px;
@@ -180,6 +161,11 @@ export const Description = styled.div`
   @media (max-width: 1249px) {
     font-size: 18px;
     line-height: 29px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+    line-height: 20px;
   }
 `;
 
@@ -226,4 +212,20 @@ export const Cursor = styled(motion.div)`
   color: #2b2929;
   border-radius: 50%;
   transform: scale(0);
+`;
+
+export const FormButton = styled.button`
+  font-size: 18px;
+  font-weight: 500;
+  color: #2b2929;
+  padding: 5px;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  transition: all 0.2s ease-in;
+`;
+
+export const Arrow = styled.img`
+  margin-left: 7px;
+  height: 12px;
 `;

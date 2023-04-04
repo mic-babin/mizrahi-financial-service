@@ -7,7 +7,12 @@ const SectionTitle = ({ title, kicker, mb }) => {
   const isXSmall = useIsXSmall();
   return (
     <H2
-      style={mb && { marginBottom: isXSmall ? "80px" : "40px" }}
+      style={
+        mb && {
+          marginBottom: isXSmall ? "60px" : "40px",
+          lineHeight: isXSmall && "24px",
+        }
+      }
       whileInView={{ x: 0, opacity: 1 }}
       initial={{ x: -200, opacity: 0 }}
       transition={{

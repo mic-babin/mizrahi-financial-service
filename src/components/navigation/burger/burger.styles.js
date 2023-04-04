@@ -57,7 +57,7 @@ export const BurgerIcon = styled(motion.div)`
       position: absolute;
       display: block;
       width: 100%;
-      height: 2px;
+      height: 1px; // 2 for bolder
       background-color: #2b2929;
       border-radius: 1px;
       transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
@@ -74,7 +74,7 @@ export const BurgerIcon = styled(motion.div)`
       span {
         &:first-of-type {
           transform: rotate(45deg);
-          top: 5px;
+          top: 6px; //5 for bolder
         }
         &:last-of-type {
           transform: rotate(-45deg);

@@ -16,11 +16,16 @@ export const Wrapper = styled.div`
 
 export const ImageWrapper = styled(motion.div)`
   width: 100%;
-  border-radius: 26px;
 `;
 export const Image = styled(GatsbyImage)`
   width: 100%;
   border-radius: 26px;
+  @media (max-width: 767px) {
+    border-radius: 22px;
+  }
+  @media (max-width: 576px) {
+    border-radius: 18px;
+  }
 `;
 
 export const Paragraph = styled(motion.div)`

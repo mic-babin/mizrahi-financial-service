@@ -9,7 +9,6 @@ const CarouselButton = ({ next, previous, position, textRight, ...rest }) => {
     carouselState: { currentSlide, deviceType },
   } = rest;
   const isSmall = useIsSmall();
-  console.log(isSmall);
   return (
     <Wrapper style={position}>
       {!isSmall && (

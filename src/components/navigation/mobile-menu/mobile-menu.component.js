@@ -10,7 +10,6 @@ const MobileMenu = ({ modalIsOpen, setIsOpen, navLinks }) => {
   };
   const [showMenu, setShowMenu] = useState(false);
 
-  console.log(showMenu);
   useEffect(() => {
     if (modalIsOpen) setTimeout(() => setShowMenu(true), 250);
   }, []);

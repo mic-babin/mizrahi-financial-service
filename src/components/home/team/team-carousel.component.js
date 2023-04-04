@@ -25,7 +25,6 @@ const TeamCarousel = ({ teamMember }) => {
           top: p ? `calc(${p.offsetHeight + 60}px)` : 0,
         });
       } else {
-        console.log("else");
         setButtonPosition({
           left: -15,
           top: 50,
@@ -82,7 +81,6 @@ const TeamCarousel = ({ teamMember }) => {
         partialVisible={true}
         renderButtonGroupOutside={true}
         responsive={responsive}
-        infinite={true}
         autoPlaySpeed={1000}
         removeArrowOnDeviceType={[
           "desktop",

@@ -14,40 +14,6 @@ export const Wrapper = styled.div`
   @media (max-width: 767px) {
     padding-bottom: 50px;
   }
-
-  @media (min-width: 576px) {
-    .container.no-left {
-      max-width: calc(100% - (100% - 540px) / 2) !important;
-      margin-right: 0;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .container.no-left {
-      max-width: calc(100% - (100% - 720px) / 2) !important;
-      margin-right: 0;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .container.no-left {
-      max-width: calc(100% - (100% - 960px) / 2) !important;
-      margin-right: 0;
-    }
-  }
-
-  @media (min-width: 1250px) {
-    .container.no-left {
-      max-width: calc(100% - (100% - 1190px) / 2) !important;
-      margin-right: 0;
-    }
-  }
-  @media (min-width: 1600px) {
-    .container.no-left {
-      max-width: calc(100% - (100% - 1550px) / 2) !important;
-      margin-right: 0;
-    }
-  }
 `;
 export const CarouselWrapper = styled(motion.div)`
   position: relative;

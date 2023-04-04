@@ -13,10 +13,12 @@ import {
 } from "./philosophy.styles";
 import DownSrc from "../../../assets/images/icons/down-arrow.svg";
 import UpSrc from "../../../assets/images/icons/up-arrow.svg";
-import { useIsXLarge } from "../../../utils/media-query.hook";
+import { useIsXLarge, useIsLarge } from "../../../utils/media-query.hook";
 
 const PhilosophyCarousel = ({ components }) => {
-  const buttonPosition = { top: "-150px", right: " 0" };
+  const isLarge = useIsLarge();
+
+  const buttonPosition = { top: "-150px", right: isLarge ? "30px" : "70px" };
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1600 },

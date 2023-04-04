@@ -8,6 +8,8 @@ import {
   Description,
   Contact,
   Cursor,
+  Arrow,
+  FormButton,
 } from "./team.styles";
 import { ModalCard, ModalButton } from "../../common/modal/modal.styles";
 import linkedInSrc from "../../../assets/images/icons/LinkedIn-Black.svg";
@@ -15,9 +17,21 @@ import { getImage } from "gatsby-plugin-image";
 import { AnimatePresence } from "framer-motion";
 
 import { renderRichText } from "gatsby-source-contentful/rich-text";
+import { useIsSmall } from "../../../utils/media-query.hook";
+import ArrowSrc from "../../../assets/images/icons/diagonal-arrow.svg";
 
 const TeamCarouselCard = ({ item, index, carousel }) => {
-  const { id, name, title, description, email, linkedIn, image, bio } = item;
+  const {
+    id,
+    name,
+    title,
+    email,
+    linkedIn,
+    image,
+    bio,
+    bioButton,
+    professionalTitles,
+  } = item;
   const [showCursor, setShowCursor] = useState(false);
   const [leftPosition, setLeftPosition] = useState(0);
   const [topPosition, setTopPosition] = useState(0);
@@ -37,6 +51,8 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
     if (shouldShow(index, carousel.current.state.currentSlide))
       setShowCursor(!showCursor);
   };
+
+  const isSmall = useIsSmall();
 
   useEffect(() => {
     const { x, y } = card.current.getBoundingClientRect();
@@ -74,20 +90,37 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
           </ImageWrapper>
         </div>
         <Name>
-          {name}, <span>{title}</span>
+          {name}
+          {title && ","} <span>{title}</span>
         </Name>
-        <Description>{description}</Description>
+        <Description>
+          {!isSmall && professionalTitles}
+          {isSmall && (
+            <ul>
+              {professionalTitles.map((title) => (
+                <li>{title}</li>
+              ))}
+            </ul>
+          )}
+        </Description>
         <Contact>
           <a href={`mailto:${email}`}>{email}</a>
           <a href={linkedIn} target="_blank">
             <img src={linkedInSrc} alt="LinkedIn Logo" />
           </a>
         </Contact>
+        {isSmall && (
+          <FormButton className="mt-3 p-0 pt-1" onClick={() => handleShow()}>
+            {bioButton}
+            <Arrow src={ArrowSrc} alt="right-arrow" />
+          </FormButton>
+        )}
       </Card>
       <ModalCard show={showModal} onHide={handleClose} centered size="lg">
         <ModalCard.Body className="p-5">
           <Name>
-            {name}, <span>{title}</span>
+            {name}
+            {title && ","} <span>{title}</span>
           </Name>
           <Description>{renderRichText(bio)}</Description>
 
