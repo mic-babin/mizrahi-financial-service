@@ -27,7 +27,6 @@ export const BurgerIcon = styled(motion.div)`
     position: relative;
     width: 50px;
     height: 50px;
-    cursor: pointer;
     transform: scale(1.5);
 
     .menu-icon__cheeckbox {
@@ -36,7 +35,6 @@ export const BurgerIcon = styled(motion.div)`
       width: 100%;
       height: 100%;
       position: relative;
-      cursor: pointer;
       z-index: 2;
       -webkit-touch-callout: none;
       position: absolute;

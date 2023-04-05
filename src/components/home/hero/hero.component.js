@@ -22,24 +22,24 @@ const Hero = ({ hero }) => {
       <Wrapper>
         <TextWrapper>
           <H2
-            whileInView={{ x: 0, opacity: 1 }}
-            initial={{ x: -200, opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             transition={{
-              duration: 0.4,
+              duration: 0.75,
               delay: 0.2,
-              type: "spring",
+              type: "linear",
             }}
             viewport={{ once: true }}
           >
             {title}
           </H2>
           <H1
-            whileInView={{ x: 0, opacity: 1 }}
-            initial={{ x: -200, opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             transition={{
-              duration: 0.4,
+              duration: 0.75,
               delay: 0.3,
-              type: "spring",
+              type: "linear",
             }}
             viewport={{ once: true }}
           >
@@ -49,12 +49,12 @@ const Hero = ({ hero }) => {
         <Images>
           <Col
             className="d-none d-md-block"
-            whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             transition={{
-              duration: 0.4,
+              duration: 0.75,
               delay: 0.4,
-              type: "spring",
+              type: "linear",
             }}
             viewport={{ once: true }}
           >
@@ -64,12 +64,12 @@ const Hero = ({ hero }) => {
           </Col>
           <Col
             className="d-none d-lg-block"
-            whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             transition={{
-              duration: 0.4,
+              duration: 0.75,
               delay: 0.7,
-              type: "spring",
+              type: "linear",
             }}
             viewport={{ once: true }}
           >
@@ -88,12 +88,12 @@ const Hero = ({ hero }) => {
             </Parallax>
           </Col>
           <Col
-            whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             transition={{
-              duration: 0.4,
+              duration: 0.75,
               delay: 0.5,
-              type: "spring",
+              type: "linear",
             }}
             viewport={{ once: true }}
           >
@@ -106,12 +106,12 @@ const Hero = ({ hero }) => {
             </Parallax>
           </Col>
           <Col
-            whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             transition={{
-              duration: 0.4,
+              duration: 0.75,
               delay: 0.6,
-              type: "spring",
+              type: "linear",
             }}
             viewport={{ once: true }}
           >

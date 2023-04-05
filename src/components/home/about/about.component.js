@@ -28,12 +28,12 @@ const About = ({ about }) => {
             <div className="col-lg-6">
               <ImageWrapper
                 key={image.id}
-                whileInView={{ x: 0, opacity: 1 }}
-                initial={{ x: -200, opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
                 transition={{
-                  duration: 0.4,
+                  duration: 0.75,
                   delay: 0.3,
-                  type: "spring",
+                  type: "linear",
                 }}
                 viewport={{ once: true }}
               >
@@ -42,12 +42,12 @@ const About = ({ about }) => {
             </div>
             <Paragraph
               className="col-lg-6"
-              whileInView={{ y: 0, opacity: 1 }}
-              initial={{ y: 200, opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
               transition={{
-                duration: 0.4,
+                duration: 0.75,
                 delay: 0.4,
-                type: "spring",
+                type: "linear",
               }}
               viewport={{ once: true }}
             >

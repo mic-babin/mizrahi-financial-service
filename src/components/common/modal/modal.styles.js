@@ -10,6 +10,7 @@ export const ModalButton = styled.p`
 `;
 
 export const ModalCard = styled(Modal)`
+  cursor: default;
   .modal-content {
     background-color: #eeede8;
   }

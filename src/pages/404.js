@@ -158,7 +158,6 @@ export const query = graphql`
               id
               name
               title
-              description
               bio {
                 raw
               }

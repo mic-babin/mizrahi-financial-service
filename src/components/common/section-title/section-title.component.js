@@ -13,12 +13,12 @@ const SectionTitle = ({ title, kicker, mb }) => {
           lineHeight: isXSmall && "24px",
         }
       }
-      whileInView={{ x: 0, opacity: 1 }}
-      initial={{ x: -200, opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
       transition={{
-        duration: 0.4,
+        duration: 0.75,
         delay: 0.2,
-        type: "spring",
+        type: "linear",
       }}
       viewport={{ once: true }}
     >

@@ -21,12 +21,12 @@ const Burger = ({ navLinks }) => {
         onClick={toggleModal}
         id="burger"
         className={modalIsOpen && "is-open"}
-        whileInView={{ y: 0, opacity: 1 }}
-        initial={{ y: 30, opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
         transition={{
-          duration: 0.4,
+          duration: 0.75,
           delay: 0.1,
-          type: "spring",
+          type: "linear",
         }}
         viewport={{ once: true }}
       >
@@ -56,7 +56,7 @@ const Burger = ({ navLinks }) => {
           transition={{
             duration: 1,
             delay: 0.1,
-            type: "spring",
+            type: "linear",
           }}
         >
           <MobileMenu

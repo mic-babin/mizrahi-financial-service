@@ -19,12 +19,12 @@ const Contact = ({ contactData }) => {
             <div className="col-lg-6 ps-3 ps-lg-0 pb-5 pb-lg-0 mb-5 mb-lg-0">
               {title && (
                 <H2
-                  whileInView={{ x: 0, opacity: 1 }}
-                  initial={{ x: -200, opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
                   transition={{
-                    duration: 0.4,
+                    duration: 0.75,
                     delay: 0.2,
-                    type: "spring",
+                    type: "linear",
                   }}
                   viewport={{ once: true }}
                 >
@@ -32,12 +32,12 @@ const Contact = ({ contactData }) => {
                 </H2>
               )}
               <motion.div
-                whileInView={{ x: 0, opacity: 1 }}
-                initial={{ x: -200, opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
                 transition={{
-                  duration: 0.4,
+                  duration: 0.75,
                   delay: 0.3,
-                  type: "spring",
+                  type: "linear",
                 }}
                 viewport={{ once: true }}
               >
@@ -48,12 +48,12 @@ const Contact = ({ contactData }) => {
                     .map((a, index) => <Address key={index}>{a}</Address>)}
               </motion.div>
               <motion.div
-                whileInView={{ x: 0, opacity: 1 }}
-                initial={{ x: -200, opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
                 transition={{
-                  duration: 0.4,
+                  duration: 0.75,
                   delay: 0.4,
-                  type: "spring",
+                  type: "linear",
                 }}
                 viewport={{ once: true }}
               >

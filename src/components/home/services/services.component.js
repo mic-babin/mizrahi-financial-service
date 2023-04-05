@@ -20,12 +20,12 @@ const services = ({ services, support }) => {
           <div className="d-flex justify-content-end">
             <LeftCol>
               <Paragraph
-                whileInView={{ x: 0, opacity: 1 }}
-                initial={{ x: -200, opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
                 transition={{
-                  duration: 0.4,
+                  duration: 0.75,
                   delay: 0.3,
-                  type: "spring",
+                  type: "linear",
                 }}
                 viewport={{ once: true }}
               >

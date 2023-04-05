@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const Wrapper = styled(motion.div)`
   margin-top: 25px;
-  cursor: pointer;
 
   @media (max-width: 576px) {
     margin-top: 0px;
@@ -82,7 +81,6 @@ export const CircleWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 
     &.open {
       background-color: #f7f7f1;

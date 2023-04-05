@@ -87,7 +87,6 @@ export const CarouselWrapper = styled(motion.div)`
 export const Card = styled.div`
   padding: 0 1.9rem;
   position: relative;
-  cursor: default;
 
   @media (max-width: 991px) {
     padding: 0px;

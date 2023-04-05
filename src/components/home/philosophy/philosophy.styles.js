@@ -80,6 +80,10 @@ export const TitleTwo = styled(Title)`
   }
 `;
 
+export const TextWrapper = styled.div`
+  overflow: hidden;
+`;
+
 export const Text = styled.div`
   padding-right: 120px;
   margin-top: 50px;

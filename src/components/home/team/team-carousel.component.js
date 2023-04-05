@@ -70,9 +70,9 @@ const TeamCarousel = ({ teamMember }) => {
       whileInView={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       transition={{
-        duration: 0.4,
+        duration: 0.75,
         delay: 0.2,
-        type: "spring",
+        type: "linear",
       }}
       viewport={{ once: true }}
     >
