@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import Header from "./navigation/header/header.component";
 import Footer from "./navigation/footer/footer.component";
 import SEO from "./seo";
-import AnimatedCursor from "react-animated-cursor";
+// import AnimatedCursor from "react-animated-cursor";
 
 const Layout = ({ menu, showPage, children, navLinks, footer }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -33,7 +33,7 @@ const Layout = ({ menu, showPage, children, navLinks, footer }) => {
           />
         </>
       )}
-      <AnimatedCursor
+      {/* <AnimatedCursor
         innerSize={12}
         outerSize={15}
         outerScale={3}
@@ -51,7 +51,7 @@ const Layout = ({ menu, showPage, children, navLinks, footer }) => {
           "button",
           ".link",
         ]}
-      />
+      /> */}
       {children}
       {showPage && <Footer navLinks={navLinks} footer={footer} />}
     </div>
