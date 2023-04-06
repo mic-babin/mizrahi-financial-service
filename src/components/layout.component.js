@@ -7,9 +7,10 @@ import { useEffect } from "react";
 import Header from "./navigation/header/header.component";
 import Footer from "./navigation/footer/footer.component";
 import SEO from "./seo";
-// import AnimatedCursor from "react-animated-cursor";
+import AnimatedCursor from "react-animated-cursor";
 
 const Layout = ({ menu, showPage, children, navLinks, footer }) => {
+  const isBrowser = typeof window !== "undefined";
   const [showMenu, setShowMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -33,25 +34,27 @@ const Layout = ({ menu, showPage, children, navLinks, footer }) => {
           />
         </>
       )}
-      {/* <AnimatedCursor
-        innerSize={12}
-        outerSize={15}
-        outerScale={3}
-        color="37, 91, 91"
-        clickables={[
-          "a",
-          'input[type="text"]',
-          'input[type="email"]',
-          'input[type="number"]',
-          'input[type="submit"]',
-          'input[type="image"]',
-          "label[for]",
-          "select",
-          "textarea",
-          "button",
-          ".link",
-        ]}
-      /> */}
+      {isBrowser && (
+        <AnimatedCursor
+          innerSize={12}
+          outerSize={15}
+          outerScale={3}
+          color="37, 91, 91"
+          clickables={[
+            "a",
+            'input[type="text"]',
+            'input[type="email"]',
+            'input[type="number"]',
+            'input[type="submit"]',
+            'input[type="image"]',
+            "label[for]",
+            "select",
+            "textarea",
+            "button",
+            ".link",
+          ]}
+        />
+      )}
       {children}
       {showPage && <Footer navLinks={navLinks} footer={footer} />}
     </div>
