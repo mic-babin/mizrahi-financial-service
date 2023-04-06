@@ -114,6 +114,7 @@ const Hero = ({ hero }) => {
               type: "linear",
             }}
             viewport={{ once: true }}
+            className="d-none d-md-block"
           >
             <Parallax translateY={[-5, 30]}>
               <Image
@@ -125,6 +126,31 @@ const Hero = ({ hero }) => {
               <Image
                 className="image-5"
                 image={getImage(images[5].gatsbyImageData)}
+                alt=""
+              />
+            </Parallax>
+          </Col>
+          <Col
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{
+              duration: 0.75,
+              delay: 0.6,
+              type: "linear",
+            }}
+            viewport={{ once: true }}
+            className="d-block d-md-none"
+          >
+            <Parallax translateY={[-5, 30]}>
+              <Image
+                className="image-6"
+                image={getImage(images[5].gatsbyImageData)}
+                alt=""
+              />
+
+              <Image
+                className="image-7"
+                image={getImage(images[0].gatsbyImageData)}
                 alt=""
               />
             </Parallax>

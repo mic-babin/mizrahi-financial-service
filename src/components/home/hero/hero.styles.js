@@ -20,16 +20,31 @@ export const Wrapper = styled.div`
     padding-top: 100px;
     padding-bottom: 100px;
   }
+
+  @media (max-width: 576px) {
+    padding-bottom: 80px;
+  }
 `;
 
 export const TextWrapper = styled.div`
   text-align: center;
   padding-bottom: 50px;
+  @media (max-width: 767px) {
+    padding-bottom: 25px;
+  }
+  @media (max-width: 576px) {
+    padding-bottom: 0px;
+  }
 `;
 
 export const H2 = styled(motion.h2)`
   font-size: 16px;
   letter-spacing: 3.2px;
+
+  @media (max-width: 576px) {
+    font-size: 14px;
+    letter-spacing: 2.8px;
+  }
 `;
 export const H1 = styled(motion.h1)`
   font-family: "TimesNow";
@@ -45,8 +60,8 @@ export const H1 = styled(motion.h1)`
     line-height: 75px;
   }
   @media (max-width: 576px) {
-    font-size: 72px;
-    line-height: 72px;
+    font-size: 42px;
+    line-height: 42px;
   }
 `;
 
@@ -60,7 +75,9 @@ export const Images = styled.div`
     grid-template-columns: 25% 42% 33%;
   }
   @media (max-width: 767px) {
-    grid-template-columns: 60% 40%;
+    grid-gap: 17px;
+    margin-left: 17px;
+    grid-template-columns: calc(60% - 17px) calc(40% - 17px);
   }
 `;
 
@@ -98,6 +115,8 @@ export const Image = styled(GatsbyImage)`
     margin-top: 8.3vw;
 
     @media (max-width: 767px) {
+      height: auto;
+      min-height: 53vh
       margin-top: 0vw;
     }
   }
@@ -107,6 +126,12 @@ export const Image = styled(GatsbyImage)`
   }
   &.image-5 {
     height: 18.7vw;
+  }
+  &.image-6 {
+    min-height: 17vh
+  }
+  &.image-7 {
+    min-height: 20vh
   }
   @media (max-width: 767px) {
     border-radius: 22px;

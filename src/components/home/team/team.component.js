@@ -22,6 +22,7 @@ const Team = ({ team, teamMember }) => {
           <Grid>
             <div id="col">
               <Paragraph
+                className="pe-2 pe-md-0"
                 id="paragraph"
                 whileInView={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
