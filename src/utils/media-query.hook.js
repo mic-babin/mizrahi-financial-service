@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 export function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
-
+  const isBrowser = typeof window !== "undefined";
   useEffect(() => {
-    const media = window.matchMedia(query);
+    const media = isBrowser ? window.matchMedia(query) : true;
     if (media.matches !== matches) {
       setMatches(media.matches);
     }

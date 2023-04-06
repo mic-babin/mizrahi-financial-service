@@ -1,6 +1,7 @@
 import React from "react";
 
 const useMousePosition = ({ includeTouch }) => {
+  const isBrowser = typeof window !== "undefined";
   const [mousePosition, setMousePosition] = React.useState({
     x: null,
     y: null,
@@ -16,13 +17,14 @@ const useMousePosition = ({ includeTouch }) => {
       }
       setMousePosition({ x, y });
     };
-    window.addEventListener("mousemove", updateMousePosition);
-    if (includeTouch) {
+    if (isBrowser) window.addEventListener("mousemove", updateMousePosition);
+    if (includeTouch && isBrowser) {
       window.addEventListener("touchmove", updateMousePosition);
     }
     return () => {
-      window.removeEventListener("mousemove", updateMousePosition);
-      if (includeTouch) {
+      if (isBrowser)
+        window.removeEventListener("mousemove", updateMousePosition);
+      if (includeTouch && isBrowser) {
         window.removeEventListener("touchmove", updateMousePosition);
       }
     };

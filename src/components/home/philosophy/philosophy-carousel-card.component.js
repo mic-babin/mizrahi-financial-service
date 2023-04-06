@@ -35,7 +35,7 @@ const PhilosophyCarouselCard = ({ item, index, next, previous }) => {
 };
 
 export default PhilosophyCarouselCard;
-
+const isBrowser = typeof window !== "undefined";
 const ItemTwo = ({ item, index }) => {
   const [open, setOpen] = useState(false);
   const toggleOpen = () => {
@@ -66,9 +66,11 @@ const ItemTwo = ({ item, index }) => {
       setHeight(p.offsetHeight);
     };
 
-    window.addEventListener("resize", handleResize);
+    if (isBrowser) window.addEventListener("resize", handleResize);
     handleResize();
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      if (isBrowser) window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (

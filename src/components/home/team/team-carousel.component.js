@@ -6,6 +6,7 @@ import TeamCarouselCard from "./team-carousel-card.component";
 import { useIsMedium } from "../../../utils/media-query.hook";
 
 const TeamCarousel = ({ teamMember }) => {
+  const isBrowser = typeof window !== "undefined";
   const { components } = teamMember;
   const carousel = useRef();
   const isMedium = useIsMedium();
@@ -32,9 +33,11 @@ const TeamCarousel = ({ teamMember }) => {
       }
     };
 
-    window.addEventListener("resize", handleResize);
+    if (isBrowser) window.addEventListener("resize", handleResize);
     handleResize();
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      if (isBrowser) window.removeEventListener("resize", handleResize);
+    };
   }, [isMedium]);
 
   const responsive = {
