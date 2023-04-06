@@ -16,6 +16,11 @@ export const FormButton = styled.button`
   background-color: transparent;
   border: none;
   transition: all 0.2s ease-in;
+
+  &:disabled {
+    opacity: 0.75;
+    cursor: not-allowed !important;
+  }
 `;
 
 export const Input = styled.input`
@@ -23,7 +28,6 @@ export const Input = styled.input`
   border: 1px solid #2b2929;
   padding: 1.35rem 2.2rem;
   background-color: #f7f7f1;
-  margin-bottom: 22px;
 
   @media (max-width: 576px) {
     padding: 1.35rem 1.75rem;
@@ -54,7 +58,6 @@ export const TextArea = styled.textarea`
   border: 1px solid #2b2929;
   padding: 1.35rem 2.2rem;
   background-color: #f7f7f1;
-  margin-bottom: 30px;
   @media (max-width: 576px) {
     padding: 1.35rem 1.75rem;
   }
@@ -80,4 +83,19 @@ export const TextArea = styled.textarea`
 export const Arrow = styled.img`
   margin-left: 7px;
   height: 12px;
+`;
+
+export const InputGroup = styled.div`
+  margin-bottom: 22px;
+  span {
+    color: red;
+    display: none;
+  }
+
+  input:invalid.focused ~ span {
+    display: block;
+  }
+  textarea:invalid.focused ~ span {
+    display: block;
+  }
 `;

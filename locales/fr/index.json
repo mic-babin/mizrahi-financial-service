@@ -4,5 +4,8 @@
   "message": "Oups! Il semble que cette page n'existe pas...",
   "messageEmail": "Nous vous répondrons dès que possible.",
   "close": "Retour vers l'accueil",
-  "closeEmail": "Fermer"
+  "closeEmail": "Fermer",
+  "sendEmail": "Envoyer",
+  "fieldRequired": "Ce champs est requis.",
+  "validEmail": "Entrer un courriel valide"
 }

@@ -5,12 +5,13 @@ import { Trans } from "gatsby-plugin-react-i18next";
 import ArrowSrc from "../../../assets/images/icons/diagonal-arrow.svg";
 import {
   Form,
-  Input,
   TextArea,
   FormButton,
   Arrow,
+  InputGroup,
 } from "./contact-form.styles";
 import { ModalCard, ModalButton } from "../../common/modal/modal.styles";
+import ContactFormInput from "./contact-form-input.component";
 
 function ContactForm({ contactForm }) {
   const formFields = contactForm;
@@ -24,6 +25,15 @@ function ContactForm({ contactForm }) {
   };
   const [fields, setFields] = useState(defaultFields);
   const [show, setShow] = useState(false);
+  const [validForm, setValidForm] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const handleFocus = () => setFocused(true);
+  const handleSent = () => setSent(true);
+
   const resetFields = () => {
     setFields(defaultFields);
   };
@@ -31,9 +41,10 @@ function ContactForm({ contactForm }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // await axios.post("/.netlify/functions/email", { fields });
+      await axios.post("/.netlify/functions/email", { fields });
       resetFields();
       handleShow();
+      handleSent();
     } catch (error) {
       alert("Une erreur est survenue");
       console.log(error.response.data);
@@ -43,10 +54,15 @@ function ContactForm({ contactForm }) {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFields({ ...fields, [name]: value });
-  };
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+    fields["name"] !== "" &&
+    /[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[A-Za-z]{2,9}/.test(
+      fields["email"]
+    ) !== "" &&
+    fields["textarea"] !== ""
+      ? setValidForm(true)
+      : setValidForm(false);
+  };
 
   return (
     <>
@@ -62,27 +78,34 @@ function ContactForm({ contactForm }) {
       >
         {inputs &&
           inputs.map((content) => (
-            <Input
-              key={content.id}
-              type={content.type}
-              placeholder={content.placeHolder}
-              required={content.required}
-              onChange={handleChange}
-              name={content.name.toLowerCase()}
-              value={fields[content.name.toLowerCase()]}
+            <ContactFormInput
+              content={content}
+              handleChange={handleChange}
+              fields={fields}
+              sent={sent}
             />
           ))}
+        <InputGroup>
+          <TextArea
+            onBlur={handleFocus}
+            className={focused && !sent && "focused"}
+            required={true}
+            onChange={handleChange}
+            name={textArea.name}
+            value={fields[textArea.name]}
+            placeholder={textArea.placeHolder}
+          />
+          <span>
+            <Trans>fieldRequired</Trans>
+          </span>
+        </InputGroup>
 
-        <TextArea
-          required={textArea.required}
-          onChange={handleChange}
-          name={textArea.name}
-          value={fields[textArea.name]}
-          placeholder={textArea.placeHolder}
-        />
-
-        <FormButton onClick={handleSubmit} className="align-self-end">
-          Envoyer
+        <FormButton
+          onClick={handleSubmit}
+          className="align-self-end"
+          disabled={!validForm}
+        >
+          <Trans>sendEmail</Trans>
           <Arrow src={ArrowSrc} alt="right-arrow" />
         </FormButton>
       </Form>
