@@ -75,7 +75,7 @@ const ItemTwo = ({ item, index }) => {
     return () => {
       if (isBrowser) window.removeEventListener("resize", handleResize);
     };
-  }, [active]);
+  }, [active, index]);
 
   return (
     <Item key={item.id}>

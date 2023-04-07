@@ -38,7 +38,7 @@ const TeamCarousel = ({ teamMember }) => {
     return () => {
       if (isBrowser) window.removeEventListener("resize", handleResize);
     };
-  }, [isMedium]);
+  }, [isMedium, isBrowser]);
 
   const responsive = {
     desktop: {

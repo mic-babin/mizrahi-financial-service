@@ -41,7 +41,15 @@ const AccordionItem = ({
         margin: "0rem 1rem",
       });
     }
-  }, [open, bodyControls, closeOthers, currentIndex]);
+  }, [
+    open,
+    bodyControls,
+    closeOthers,
+    currentIndex,
+    index,
+    isMedium,
+    setCloseOthers,
+  ]);
 
   return (
     <ItemWrapper

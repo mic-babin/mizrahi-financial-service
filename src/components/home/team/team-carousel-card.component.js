@@ -105,7 +105,7 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
         </Description>
         <Contact>
           <a href={`mailto:${email}`}>{email}</a>
-          <a href={linkedIn} target="_blank">
+          <a href={linkedIn} target="_blank" rel="noreferrer">
             <img src={linkedInSrc} alt="LinkedIn Logo" />
           </a>
         </Contact>

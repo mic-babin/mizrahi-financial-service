@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import Carousel from "react-multi-carousel";
 import CarouselButton from "../../common/carousel-button/carousel-buton.component";
 import { CarouselWrapper } from "./philosophy.styles";

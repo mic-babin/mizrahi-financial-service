@@ -7,8 +7,7 @@ import { SlideContext } from "../../../context/slide.context";
 
 const CarouselButton = ({ next, previous, position, textRight, ...rest }) => {
   const {
-    onMove,
-    carouselState: { currentSlide, deviceType },
+    carouselState: { currentSlide },
   } = rest;
 
   const isSmall = useIsSmall();
@@ -16,7 +15,7 @@ const CarouselButton = ({ next, previous, position, textRight, ...rest }) => {
 
   useEffect(() => {
     setActive(currentSlide);
-  }, [currentSlide]);
+  }, [currentSlide, setActive]);
 
   return (
     <Wrapper style={position}>

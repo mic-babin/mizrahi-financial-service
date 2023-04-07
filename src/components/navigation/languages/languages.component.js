@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useI18next } from "gatsby-plugin-react-i18next";
 import { Lang } from "./languages.style";
 
-const Languages = ({}) => {
-  const { languages, originalPath, t, i18n } = useI18next();
+const Languages = () => {
+  const { languages, originalPath, i18n } = useI18next();
   const language = i18n.language;
 
   const [visibleLang, setVisibleLang] = useState(
@@ -12,7 +12,7 @@ const Languages = ({}) => {
 
   useEffect(() => {
     setVisibleLang(languages.filter((lng) => lng !== language));
-  }, []);
+  }, [language, languages]);
 
   return (
     <div className="d-block">

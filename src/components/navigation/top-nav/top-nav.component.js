@@ -9,7 +9,7 @@ const TopNav = ({ menu }) => {
     <Wrapper>
       <Links>
         <Languages />
-        <a href={link} target="_blank">
+        <a href={link} target="_blank" rel="noreferrer">
           <img src={linkedInSrc} alt="LinkedIn Logo" />
         </a>
       </Links>

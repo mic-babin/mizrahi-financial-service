@@ -13,7 +13,7 @@ export function useMediaQuery(query) {
     };
     media.addListener(listener);
     return () => media.removeListener(listener);
-  }, [matches, query]);
+  }, [matches, query, isBrowser]);
 
   return matches;
 }

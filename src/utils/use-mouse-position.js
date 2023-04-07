@@ -28,7 +28,7 @@ const useMousePosition = ({ includeTouch }) => {
         window.removeEventListener("touchmove", updateMousePosition);
       }
     };
-  }, [includeTouch]);
+  }, [includeTouch, isBrowser]);
   return mousePosition;
 };
 

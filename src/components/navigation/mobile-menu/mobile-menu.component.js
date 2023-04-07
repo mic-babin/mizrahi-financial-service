@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Overlay, MenuLinks, MenuLink } from "./mobile-menu.styles";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { ModalAnimation } from "./mobile-menu.animation";
 
 const MobileMenu = ({ modalIsOpen, setIsOpen, navLinks }) => {
@@ -12,7 +12,7 @@ const MobileMenu = ({ modalIsOpen, setIsOpen, navLinks }) => {
 
   useEffect(() => {
     if (modalIsOpen) setTimeout(() => setShowMenu(true), 250);
-  }, []);
+  }, [modalIsOpen]);
 
   return (
     <Overlay>
