@@ -116,8 +116,7 @@ export const Image = styled(GatsbyImage)`
 
     @media (max-width: 767px) {
       height: auto;
-      min-height: 53vh
-      margin-top: 0vw;
+      min-height: 33vh;
     }
   }
   &.image-4 {
@@ -128,10 +127,10 @@ export const Image = styled(GatsbyImage)`
     height: 18.7vw;
   }
   &.image-6 {
-    min-height: 17vh
+    min-height: 17vh;
   }
   &.image-7 {
-    min-height: 20vh
+    min-height: 20vh;
   }
   @media (max-width: 767px) {
     border-radius: 22px;

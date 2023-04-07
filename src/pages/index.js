@@ -11,6 +11,7 @@ import Team from "../components/home/team/team.component";
 import Philosophy from "../components/home/philosophy/philosophy.component";
 import Services from "../components/home/services/services.component";
 import Contact from "../components/home/contact/contact.component";
+import Intro from "../components/home/intro/intro.component";
 import { SlideProvider } from "../context/slide.context";
 
 export default function Homepage(props) {
@@ -51,32 +52,17 @@ export default function Homepage(props) {
   const contact = allContentfulContact.edges[0].node;
   const footer = allContentfulFooter.nodes[0];
 
-  const [showPage, setShowPage] = useState(true);
-  const [showLoader, setShowLoader] = useState(false);
+  const [showPage, setShowPage] = useState(false);
 
   useEffect(() => {
-    // let about = document.getElementById("about");
-    // if (about && props.location.hash === "#a-propos") {
-    //   about.scrollIntoView({ behavior: "smooth" }, true);
-    // }
-
-    if (showLoader) {
-      setTimeout(() => {
-        setShowLoader(false);
-      }, 1800);
-    }
     if (!showPage) {
       setTimeout(() => {
         setShowPage(true);
-      }, 1);
+      }, 3000);
     }
 
     return () => {};
-  }, [
-    showPage,
-    showLoader,
-    // props.location.hash
-  ]);
+  }, [showPage]);
 
   return (
     <div>
@@ -87,8 +73,8 @@ export default function Homepage(props) {
         footer={footer}
       >
         <SlideProvider>
-          {/* <FirstLoader image={loader} show={showLoader}></FirstLoader> */}
-          {showPage && !showLoader && (
+          {!showPage && <Intro />}
+          {showPage && (
             <ParallaxProvider>
               <Hero hero={hero} />
               <About about={about} />

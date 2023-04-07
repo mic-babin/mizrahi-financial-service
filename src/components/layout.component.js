@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import "../assets/styles/normalize.css";
 import "../assets/styles/main.scss";
-import "../assets/styles/accordion.css";
 import { useEffect } from "react";
 import Header from "./navigation/header/header.component";
 import Footer from "./navigation/footer/footer.component";
@@ -13,7 +12,6 @@ const Layout = ({ menu, showPage, children, navLinks, footer }) => {
   const isBrowser = typeof window !== "undefined";
   const [showMenu, setShowMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
-
   useEffect(() => {
     if (showModal) {
       setShowModal(showMenu);
@@ -25,14 +23,12 @@ const Layout = ({ menu, showPage, children, navLinks, footer }) => {
   return (
     <div>
       {showPage && (
-        <>
-          <Header
-            menu={menu}
-            showMenu={showMenu}
-            setShowMenu={setShowMenu}
-            navLinks={navLinks}
-          />
-        </>
+        <Header
+          menu={menu}
+          showMenu={showMenu}
+          setShowMenu={setShowMenu}
+          navLinks={navLinks}
+        />
       )}
       {isBrowser && (
         <AnimatedCursor

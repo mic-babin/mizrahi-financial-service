@@ -21,7 +21,17 @@ const About = ({ about }) => {
       <div className="scroll-to" id="a-propos"></div>
       <Wrapper>
         <div className="container">
-          <TopLine>
+          <TopLine
+            key={image.id}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{
+              duration: 0.75,
+              delay: 0.3,
+              type: "linear",
+            }}
+            viewport={{ once: true }}
+          >
             <SectionTitle title={title} kicker={kicker} />
           </TopLine>
           <div className="row px-0">

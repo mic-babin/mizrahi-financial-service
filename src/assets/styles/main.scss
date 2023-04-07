@@ -42,6 +42,29 @@ body {
   font-size: 14px;
   background-color: #e7e3da;
   color: #2b2929;
+  overflow: auto;
+  background: linear-gradient(
+    297deg,
+    rgba(231, 227, 218, 1) 39%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(231, 227, 218, 1) 62%
+  );
+  animation: gradient 3s ease;
+  background-size: 300% 300%;
+  background-attachment: fixed;
+  position: relative;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 .pointer {

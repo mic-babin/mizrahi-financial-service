@@ -79,6 +79,7 @@ function ContactForm({ contactForm }) {
         {inputs &&
           inputs.map((content) => (
             <ContactFormInput
+              key={content.id}
               content={content}
               handleChange={handleChange}
               fields={fields}

@@ -23,7 +23,6 @@ const AccordionItem = ({
   const isXSmall = useIsXSmall();
   const isMedium = useIsMedium();
   const bodyControls = useAnimationControls();
-  console.log(isXSmall && index === 3);
   useEffect(() => {
     if (open) setCloseOthers(true);
 
