@@ -13,6 +13,7 @@ import {
 import DownSrc from "../../../assets/images/icons/down-arrow.svg";
 import UpSrc from "../../../assets/images/icons/up-arrow.svg";
 import {
+  useIsXLarge,
   useIsLarge,
   useIsSmall,
   useIsXSmall,
@@ -43,6 +44,7 @@ const ItemTwo = ({ item, index }) => {
   const toggleOpen = () => {
     setOpen(!open);
   };
+  const isXLarge = useIsXLarge();
   const isLarge = useIsLarge();
   const isSmall = useIsSmall();
   const isXSmall = useIsXSmall();
@@ -56,7 +58,9 @@ const ItemTwo = ({ item, index }) => {
         ? "250px"
         : isLarge
         ? "180px"
-        : "250px";
+        : isXLarge
+        ? "250px"
+        : "240px";
     }
   };
 
