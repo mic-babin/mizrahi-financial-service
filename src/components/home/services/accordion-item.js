@@ -16,6 +16,7 @@ const AccordionItem = ({
 }) => {
   const { title, paragraphs } = item;
   const [open, setOpen] = useState(false);
+  const [hover, setHover] = useState(false);
   const toggleState = () => {
     setCurrentIndex(index);
     setOpen(!open);
@@ -53,6 +54,8 @@ const AccordionItem = ({
 
   return (
     <ItemWrapper
+      onMouseOver={() => setHover(true)}
+      onMouseOut={() => setHover(false)}
       className="link"
       onClick={() => toggleState(open)}
       whileInView={{ opacity: 1 }}
@@ -82,7 +85,7 @@ const AccordionItem = ({
           {title}
         </Title>
 
-        <Circle open={open} />
+        <Circle open={open} hover={hover} />
       </Toggler>
       <Body
         animate={bodyControls}

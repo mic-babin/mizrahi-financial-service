@@ -48,8 +48,10 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
     isEven(index) === isEven(currentSlide);
 
   const toggleCursor = () => {
-    if (shouldShow(index, carousel.current.state.currentSlide))
+    if (shouldShow(index, carousel.current.state.currentSlide)) {
       setShowCursor(!showCursor);
+      document.querySelector("html").classList.toggle("no-cursor");
+    }
   };
 
   const isSmall = useIsSmall();

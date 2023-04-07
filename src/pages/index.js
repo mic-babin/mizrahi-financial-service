@@ -58,7 +58,7 @@ export default function Homepage(props) {
     if (!showPage) {
       setTimeout(() => {
         setShowPage(true);
-      }, 3000);
+      }, 4000);
     }
 
     return () => {};

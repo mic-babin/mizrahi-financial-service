@@ -29,7 +29,7 @@ export const FrontWrapper = styled.div`
   width: 0%;
   overflow: hidden;
 
-  animation: slideOpen 2s linear;
+  animation: slideOpen 3s linear;
   animation-delay: 0.3s;
 
   @keyframes slideOpen {
@@ -40,10 +40,10 @@ export const FrontWrapper = styled.div`
     25% {
       width: 8%;
     }
-    75% {
+    65% {
       width: 92%;
     }
-    90%,
+    75%,
     100% {
       width: 100%;
     }
@@ -69,7 +69,7 @@ export const FrontLogo = styled(motion.img)`
   top: 0;
   left: 0;
   opacity: 0;
-  animation: fadeFull 2s linear;
+  animation: fadeFull 3s linear;
   animation-delay: 0.3s;
 
   @keyframes fadeFull {
@@ -87,7 +87,7 @@ export const FrontLogo = styled(motion.img)`
   }
 `;
 export const BackLogo = styled(FrontLogo)`
-  animation: fade 2s linear;
+  animation: fade 2.9s linear;
   animation-delay: 0.3s;
   @keyframes fade {
     0%,
@@ -102,16 +102,6 @@ export const BackLogo = styled(FrontLogo)`
 `;
 
 export const BottomLogo = styled(FrontLogo)`
-  animation: fadeDown 2s linear;
+  animation: fadeFull 3s linear;
   animation-delay: 0.3s;
-  @keyframes fadeDown {
-    0%,
-    100% {
-      opacity: 0;
-    }
-    50%,
-    90% {
-      opacity: 1;
-    }
-  }
 `;

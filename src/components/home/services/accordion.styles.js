@@ -81,6 +81,7 @@ export const CircleWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.25s all cubic-bezier(0.17, 0.67, 0.09, 0.97);
 
     &.open {
       background-color: #f7f7f1;

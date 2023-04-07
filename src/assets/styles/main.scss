@@ -37,6 +37,13 @@ $container-max-widths: (
   font-display: auto;
 }
 
+html {
+  --cursor-color: rgba(37, 91, 91, 0.3);
+}
+
+html.no-cursor {
+  --cursor-color: rgba(37, 91, 91, 0);
+}
 body {
   font-family: "SF-Display-Regular";
   font-size: 14px;
@@ -44,31 +51,39 @@ body {
   color: #2b2929;
   overflow: auto;
   background: linear-gradient(
-    297deg,
-    rgba(231, 227, 218, 1) 39%,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(231, 227, 218, 1) 62%
+    0deg,
+    rgba(231, 227, 218, 1) 45%,
+    rgba(237, 234, 227, 1) 50%,
+    rgba(231, 227, 218, 1) 55%
   );
-  animation: gradient 3s ease;
-  background-size: 300% 300%;
+  animation: gradient 6s ease;
+  animation-delay: 0.3s;
+  background-size: 100% 300%;
   background-attachment: fixed;
   position: relative;
+  cursor: default !important;
 }
 
 @keyframes gradient {
-  0% {
+  0%,
+  45% {
     background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
   }
   100% {
-    background-position: 0% 0%;
+    background-position: 0% 100%;
   }
 }
+a,
+select,
+button,
+.link {
+  cursor: pointer !important
+  ;
+}
 
-.pointer {
-  cursor: pointer;
+input,
+textarea {
+  cursor: text !important;
 }
 
 .scroll-to {

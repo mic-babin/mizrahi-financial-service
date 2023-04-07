@@ -20,11 +20,11 @@ import {
 } from "../../../utils/media-query.hook";
 import { SlideContext } from "../../../context/slide.context";
 
-const PhilosophyCarouselCard = ({ item, index, next, previous }) => {
+const PhilosophyCarouselCard = ({ item, index }) => {
   return (
-    <React.Fragment key={item.id}>
+    <>
       {index === 0 && (
-        <Item>
+        <Item key={index}>
           <Title>
             <span>{`0${index + 1}`}</span>
             <span>{item.title}</span>
@@ -32,8 +32,8 @@ const PhilosophyCarouselCard = ({ item, index, next, previous }) => {
           <Text>{renderRichText(item.paragraphs)}</Text>
         </Item>
       )}
-      {index !== 0 && <ItemTwo item={item} index={index} />}
-    </React.Fragment>
+      {index !== 0 && <ItemTwo item={item} index={index} key={index} />}
+    </>
   );
 };
 

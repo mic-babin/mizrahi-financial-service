@@ -32,7 +32,7 @@ const Layout = ({ menu, showPage, children, navLinks, footer }) => {
       )}
       {isBrowser && (
         <AnimatedCursor
-          innerSize={12}
+          innerSize={0}
           outerSize={15}
           outerScale={3}
           color="37, 91, 91"
@@ -49,6 +49,9 @@ const Layout = ({ menu, showPage, children, navLinks, footer }) => {
             "button",
             ".link",
           ]}
+          outerStyle={{
+            backgroundColor: "var(--cursor-color)",
+          }}
         />
       )}
       {children}
