@@ -4,7 +4,7 @@ import { useAnimationControls } from "framer-motion";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { Toggler, Body, ItemWrapper, Title } from "./accordion.styles";
 import Circle from "./circle.component";
-import { useIsXSmall } from "../../../utils/media-query.hook";
+import { useIsXSmall, useIsMedium } from "../../../utils/media-query.hook";
 
 const AccordionItem = ({
   item,
@@ -21,12 +21,13 @@ const AccordionItem = ({
     setOpen(!open);
   };
   const isXSmall = useIsXSmall();
+  const isMedium = useIsMedium();
   const bodyControls = useAnimationControls();
   console.log(isXSmall && index === 3);
   useEffect(() => {
     if (open) setCloseOthers(true);
 
-    if (closeOthers && currentIndex !== index) setOpen(false);
+    if (!isMedium && closeOthers && currentIndex !== index) setOpen(false);
 
     if (open) {
       // OPEN

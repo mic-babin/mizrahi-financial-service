@@ -1,26 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Button, Wrapper, Text } from "./carousel-button.styles";
 import LeftSrc from "../../../assets/images/icons/left-arrow.svg";
 import RightSrc from "../../../assets/images/icons/right-arrow.svg";
 import { useIsSmall } from "../../../utils/media-query.hook";
-import { useEffect } from "react";
-const CarouselButton = ({
-  current,
-  setCurrent,
-  next,
-  previous,
-  position,
-  textRight,
-  ...rest
-}) => {
+import { SlideContext } from "../../../context/slide.context";
+
+const CarouselButton = ({ next, previous, position, textRight, ...rest }) => {
   const {
     onMove,
     carouselState: { currentSlide, deviceType },
   } = rest;
 
   const isSmall = useIsSmall();
+  const { setActive } = useContext(SlideContext);
+
   useEffect(() => {
-    // setCurrent(currentSlide);
+    setActive(currentSlide);
   }, [currentSlide]);
 
   return (

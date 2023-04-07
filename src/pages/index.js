@@ -11,6 +11,7 @@ import Team from "../components/home/team/team.component";
 import Philosophy from "../components/home/philosophy/philosophy.component";
 import Services from "../components/home/services/services.component";
 import Contact from "../components/home/contact/contact.component";
+import { SlideProvider } from "../context/slide.context";
 
 export default function Homepage(props) {
   const {
@@ -85,17 +86,19 @@ export default function Homepage(props) {
         showPage={showPage}
         footer={footer}
       >
-        {/* <FirstLoader image={loader} show={showLoader}></FirstLoader> */}
-        {showPage && !showLoader && (
-          <ParallaxProvider>
-            <Hero hero={hero} />
-            <About about={about} />
-            <Team team={team} teamMember={teamMember} />
-            <Philosophy philosophy={philosophy} />
-            <Services services={services} support={support} />
-            <Contact contactData={contact} />
-          </ParallaxProvider>
-        )}
+        <SlideProvider>
+          {/* <FirstLoader image={loader} show={showLoader}></FirstLoader> */}
+          {showPage && !showLoader && (
+            <ParallaxProvider>
+              <Hero hero={hero} />
+              <About about={about} />
+              <Team team={team} teamMember={teamMember} />
+              <Philosophy philosophy={philosophy} />
+              <Services services={services} support={support} />
+              <Contact contactData={contact} />
+            </ParallaxProvider>
+          )}
+        </SlideProvider>
       </Layout>
     </div>
   );

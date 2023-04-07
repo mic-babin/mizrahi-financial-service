@@ -1,5 +1,6 @@
 import { renderRichText } from "gatsby-source-contentful/rich-text";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+
 import {
   Item,
   Title,
@@ -16,6 +17,7 @@ import {
   useIsSmall,
   useIsXSmall,
 } from "../../../utils/media-query.hook";
+import { SlideContext } from "../../../context/slide.context";
 
 const PhilosophyCarouselCard = ({ item, index, next, previous }) => {
   return (
@@ -59,8 +61,10 @@ const ItemTwo = ({ item, index }) => {
   };
 
   const [height, setHeight] = useState(0);
+  const { active } = useContext(SlideContext);
 
   useEffect(() => {
+    setOpen(false);
     const p = document.getElementById(`p-${index}`);
     const handleResize = () => {
       setHeight(p.offsetHeight);
@@ -71,7 +75,7 @@ const ItemTwo = ({ item, index }) => {
     return () => {
       if (isBrowser) window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [active]);
 
   return (
     <Item key={item.id}>

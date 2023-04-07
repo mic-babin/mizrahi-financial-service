@@ -82,6 +82,7 @@ export const TitleTwo = styled(Title)`
 
 export const TextWrapper = styled.div`
   overflow: hidden;
+  transition: all 0.3s ease;
 `;
 
 export const Text = styled.div`

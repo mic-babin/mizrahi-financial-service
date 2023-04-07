@@ -6,7 +6,6 @@ import { useIsLarge } from "../../../utils/media-query.hook";
 import PhilosophyCarouselCard from "./philosophy-carousel-card.component";
 
 const PhilosophyCarousel = ({ components }) => {
-  const [current, setCurrent] = useState(0);
   const isLarge = useIsLarge();
   const carousel = useRef();
 
@@ -38,7 +37,7 @@ const PhilosophyCarousel = ({ components }) => {
       partialVisibilityGutter: -110, // this is needed to tell the amount of px that should be visible.
     },
   };
-  console.log(current);
+
   return (
     <CarouselWrapper
       whileInView={{ opacity: 1 }}
@@ -65,13 +64,7 @@ const PhilosophyCarousel = ({ components }) => {
           "phone",
         ]}
         keyBoardControl={true}
-        customButtonGroup={
-          <CarouselButton
-            position={buttonPosition}
-            current={current}
-            setCurrent={setCurrent}
-          />
-        }
+        customButtonGroup={<CarouselButton position={buttonPosition} />}
       >
         {components &&
           components.map((item, index) => (
