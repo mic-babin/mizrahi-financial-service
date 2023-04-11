@@ -38,7 +38,7 @@ $container-max-widths: (
 }
 
 html {
-  --cursor-color: rgba(37, 91, 91, 0.3);
+  --cursor-color: rgba(37, 91, 91, 1);
 }
 
 html.no-cursor {
@@ -56,8 +56,8 @@ body {
     rgba(237, 234, 227, 1) 50%,
     rgba(231, 227, 218, 1) 55%
   );
-  animation: gradient 6s ease;
-  animation-delay: 0.3s;
+  animation: gradient 5.5s ease;
+  animation-delay: 0.2s;
   background-size: 100% 300%;
   background-attachment: fixed;
   position: relative;
