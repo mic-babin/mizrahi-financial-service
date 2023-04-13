@@ -1,6 +1,5 @@
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import React, { useState, useEffect, useContext } from "react";
-
 import {
   Item,
   Title,
@@ -19,6 +18,7 @@ import {
   useIsXSmall,
 } from "../../../utils/media-query.hook";
 import { SlideContext } from "../../../context/slide.context";
+import { useSetDimensionBrowserResize } from "../../../utils/set-dimension-browser-resize.hook";
 
 const PhilosophyCarouselCard = ({ item, index }) => {
   return (
@@ -38,7 +38,7 @@ const PhilosophyCarouselCard = ({ item, index }) => {
 };
 
 export default PhilosophyCarouselCard;
-const isBrowser = typeof window !== "undefined";
+
 const ItemTwo = ({ item, index }) => {
   const [open, setOpen] = useState(false);
   const toggleOpen = () => {
@@ -48,6 +48,7 @@ const ItemTwo = ({ item, index }) => {
   const isLarge = useIsLarge();
   const isSmall = useIsSmall();
   const isXSmall = useIsXSmall();
+
   const getHeight = (open) => {
     if (open) {
       return `${height + 40}px`;
@@ -64,22 +65,12 @@ const ItemTwo = ({ item, index }) => {
     }
   };
 
-  const [height, setHeight] = useState(0);
   const { active } = useContext(SlideContext);
+  const { height } = useSetDimensionBrowserResize(`p-${index}`);
 
   useEffect(() => {
     setOpen(false);
-    const p = document.getElementById(`p-${index}`);
-    const handleResize = () => {
-      setHeight(p.offsetHeight);
-    };
-
-    if (isBrowser) window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => {
-      if (isBrowser) window.removeEventListener("resize", handleResize);
-    };
-  }, [active, index]);
+  }, [active]);
 
   return (
     <Item key={item.id}>

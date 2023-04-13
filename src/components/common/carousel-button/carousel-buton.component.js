@@ -15,7 +15,7 @@ const CarouselButton = ({ next, previous, position, textRight, ...rest }) => {
 
   useEffect(() => {
     setActive(currentSlide);
-  }, [currentSlide, setActive]);
+  }, [currentSlide]);
 
   return (
     <Wrapper style={position}>

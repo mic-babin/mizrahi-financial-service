@@ -12,7 +12,6 @@ const Philosophy = ({ philosophy }) => {
       <Wrapper>
         <div className="container no-left">
           <SectionTitle title={title} />
-
           <PhilosophyCarousel components={components} />
         </div>
       </Wrapper>

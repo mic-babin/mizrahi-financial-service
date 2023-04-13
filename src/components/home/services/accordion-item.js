@@ -6,29 +6,25 @@ import { Toggler, Body, ItemWrapper, Title } from "./accordion.styles";
 import Circle from "./circle.component";
 import { useIsXSmall, useIsMedium } from "../../../utils/media-query.hook";
 
-const AccordionItem = ({
-  item,
-  index,
-  closeOthers,
-  setCloseOthers,
-  currentIndex,
-  setCurrentIndex,
-}) => {
+const AccordionItem = ({ item, index, currentIndex, setCurrentIndex }) => {
   const { title, paragraphs } = item;
+
+  const isXSmall = useIsXSmall();
+  const isMedium = useIsMedium();
+  const bodyControls = useAnimationControls();
+
   const [open, setOpen] = useState(false);
   const [hover, setHover] = useState(false);
+
   const toggleState = () => {
     setCurrentIndex(index);
     setOpen(!open);
   };
-  const isXSmall = useIsXSmall();
-  const isMedium = useIsMedium();
-  const bodyControls = useAnimationControls();
+
   useEffect(() => {
-    if (open) setCloseOthers(true);
-
-    if (!isMedium && closeOthers && currentIndex !== index) setOpen(false);
-
+    if (!isMedium) {
+      setOpen(currentIndex === index);
+    }
     if (open) {
       // OPEN
       bodyControls.start({
@@ -42,15 +38,7 @@ const AccordionItem = ({
         margin: "0rem 1rem",
       });
     }
-  }, [
-    open,
-    bodyControls,
-    closeOthers,
-    currentIndex,
-    index,
-    isMedium,
-    setCloseOthers,
-  ]);
+  }, [open, bodyControls, currentIndex, index, isMedium]);
 
   return (
     <ItemWrapper

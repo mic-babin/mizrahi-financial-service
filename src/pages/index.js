@@ -65,28 +65,21 @@ export default function Homepage(props) {
   }, [showPage]);
 
   return (
-    <div>
-      <Layout
-        menu={menu}
-        navLinks={navLinks}
-        showPage={showPage}
-        footer={footer}
-      >
+    <Layout menu={menu} navLinks={navLinks} showPage={showPage} footer={footer}>
+      {!showPage && <Intro />}
+      {showPage && (
         <SlideProvider>
-          {!showPage && <Intro />}
-          {showPage && (
-            <ParallaxProvider>
-              <Hero hero={hero} />
-              <About about={about} />
-              <Team team={team} teamMember={teamMember} />
-              <Philosophy philosophy={philosophy} />
-              <Services services={services} support={support} />
-              <Contact contactData={contact} />
-            </ParallaxProvider>
-          )}
+          <ParallaxProvider>
+            <Hero hero={hero} />
+            <About about={about} />
+            <Team team={team} teamMember={teamMember} />
+            <Philosophy philosophy={philosophy} />
+            <Services services={services} support={support} />
+            <Contact contactData={contact} />
+          </ParallaxProvider>
         </SlideProvider>
-      </Layout>
-    </div>
+      )}
+    </Layout>
   );
 }
 

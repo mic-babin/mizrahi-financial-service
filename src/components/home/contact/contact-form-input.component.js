@@ -18,8 +18,9 @@ const ContactFormInput = ({ content, handleChange, fields, sent }) => {
         onBlur={handleFocus}
         className={focused && !sent && "focused"}
         pattern={
-          content.type === "email" &&
-          "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[A-Za-z]{2,9}"
+          content.type === "email"
+            ? "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[A-Za-z]{2,9}"
+            : null
         }
       />
       {content.type !== "email" && (

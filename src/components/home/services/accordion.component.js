@@ -5,8 +5,7 @@ import AccordionItem from "./accordion-item";
 
 const Accordion = ({ support }) => {
   const { title, components } = support;
-  const [closeOthers, setCloseOthers] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(-1);
 
   return (
     <Wrapper>
@@ -19,8 +18,6 @@ const Accordion = ({ support }) => {
               key={item.id}
               index={index}
               item={item}
-              closeOthers={closeOthers}
-              setCloseOthers={setCloseOthers}
               currentIndex={currentIndex}
               setCurrentIndex={setCurrentIndex}
             />
