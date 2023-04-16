@@ -68,7 +68,13 @@ const Contact = ({ contactData }) => {
                 <Address as="a" href={`tel: ${tel.url}`} className="pointer">
                   {tel.text}
                 </Address>
-                <Address as="a" href={linkedIn.url} className="pointer">
+                <Address
+                  as="a"
+                  href={linkedIn.url}
+                  target="_blank"
+                  rel="noreferrer "
+                  className="pointer"
+                >
                   <img src={LinkedInSrc} alt="LinkedIn Logo" />
                 </Address>
               </motion.div>

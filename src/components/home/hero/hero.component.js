@@ -60,7 +60,11 @@ const Hero = ({ hero }) => {
             viewport={{ once: true }}
           >
             <Parallax translateY={[35, 60]}>
-              <Image image={getImage(images[0].gatsbyImageData)} alt="" />
+              <Image
+                image={getImage(images[0].gatsbyImageData)}
+                alt=""
+                loading="eager"
+              />
             </Parallax>
           </Col>
           <Col
@@ -79,12 +83,14 @@ const Hero = ({ hero }) => {
                 className="image-1"
                 image={getImage(images[1].gatsbyImageData)}
                 alt=""
+                loading="eager"
               />
 
               <Image
                 className="image-2"
                 image={getImage(images[2].gatsbyImageData)}
                 alt=""
+                loading="eager"
               />
             </Parallax>
           </Col>
@@ -103,6 +109,7 @@ const Hero = ({ hero }) => {
                 className="image-3"
                 image={getImage(images[3].gatsbyImageData)}
                 alt=""
+                loading="eager"
               />
             </Parallax>
           </Col>
@@ -122,12 +129,14 @@ const Hero = ({ hero }) => {
                 className="image-4"
                 image={getImage(images[4].gatsbyImageData)}
                 alt=""
+                loading="eager"
               />
 
               <Image
                 className="image-5"
                 image={getImage(images[5].gatsbyImageData)}
                 alt=""
+                loading="eager"
               />
             </Parallax>
           </Col>
@@ -147,12 +156,14 @@ const Hero = ({ hero }) => {
                 className="image-6"
                 image={getImage(images[5].gatsbyImageData)}
                 alt=""
+                loading="eager"
               />
 
               <Image
                 className="image-7"
                 image={getImage(images[0].gatsbyImageData)}
                 alt=""
+                loading="eager"
               />
             </Parallax>
           </Col>

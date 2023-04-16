@@ -9,7 +9,6 @@ export const ShowPageProvider = ({ children }) => {
   const [showPage, setShowPage] = useState(null);
   const value = { showPage };
 
-  console.log(showPage);
   useEffect(() => {
     if (!showPage) {
       setTimeout(() => {

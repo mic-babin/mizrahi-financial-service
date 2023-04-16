@@ -16,11 +16,6 @@ export const FormButton = styled.button`
   background-color: transparent;
   border: none;
   transition: all 0.2s ease-in;
-
-  &:disabled {
-    opacity: 0.75;
-    cursor: not-allowed !important;
-  }
 `;
 
 export const Input = styled.input`
@@ -89,13 +84,5 @@ export const InputGroup = styled.div`
   margin-bottom: 22px;
   span {
     color: red;
-    display: none;
-  }
-
-  input:invalid.focused ~ span {
-    display: block;
-  }
-  textarea:invalid.focused ~ span {
-    display: block;
   }
 `;

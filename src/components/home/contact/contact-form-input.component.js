@@ -1,36 +1,33 @@
-import React, { useState } from "react";
-import { Input, InputGroup } from "./contact-form.styles";
+import React from "react";
+import { Input, InputGroup, TextArea } from "./contact-form.styles";
 import { Trans } from "gatsby-plugin-react-i18next";
 
-const ContactFormInput = ({ content, handleChange, fields, sent }) => {
-  const [focused, setFocused] = useState(false);
-  const handleFocus = () => setFocused(true);
+const ContactFormInput = ({ field, handleChange, fields, errors }) => {
   return (
     <InputGroup>
-      <Input
-        key={content.id}
-        type={content.type}
-        placeholder={content.placeHolder}
-        required={content.name.toLowerCase() === "how" ? false : true}
-        onChange={handleChange}
-        name={content.name.toLowerCase()}
-        value={fields[content.name.toLowerCase()]}
-        onBlur={handleFocus}
-        className={focused && !sent && "focused"}
-        pattern={
-          content.type === "email"
-            ? "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[A-Za-z]{2,9}"
-            : null
-        }
-      />
-      {content.type !== "email" && (
-        <span>
-          <Trans>fieldRequired</Trans>
-        </span>
+      {field.type !== "textarea" ? (
+        <Input
+          key={field.id}
+          type={field.type}
+          placeholder={field.placeHolder}
+          required={field.name.toLowerCase() === "how" ? false : true}
+          onChange={handleChange}
+          name={field.name.toLowerCase()}
+          value={fields[field.name.toLowerCase()]}
+        />
+      ) : (
+        <TextArea
+          required={true}
+          onChange={handleChange}
+          name={field.name}
+          value={fields[field.name]}
+          placeholder={field.placeHolder}
+        />
       )}
-      {content.type === "email" && (
+
+      {errors[field.name.toLowerCase()] && (
         <span>
-          <Trans>validEmail</Trans>
+          <Trans>{errors[field.name.toLowerCase()]}</Trans>
         </span>
       )}
     </InputGroup>
