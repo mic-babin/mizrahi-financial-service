@@ -11,8 +11,11 @@ import Team from "../components/home/team/team.component";
 import Philosophy from "../components/home/philosophy/philosophy.component";
 import Services from "../components/home/services/services.component";
 import Contact from "../components/home/contact/contact.component";
+import Intro from "../components/home/intro/intro.component";
+import { SlideProvider } from "../context/slide.context";
 
 export default function Homepage(props) {
+  const [initialRenderComplete, setInitialRenderComplete] = useState(false);
   const {
     data: {
       allContentfulSections,
@@ -30,75 +33,74 @@ export default function Homepage(props) {
     (section) => section.node.title === "Services"
   )[0].node;
   const support = allContentfulSections.edges.filter(
-    (section) => section.node.title === "Notre démarche d’accompagnement"
+    (section) =>
+      section.node.title === "Notre démarche d’accompagnement" ||
+      section.node.title === "Our support approach"
   )[0].node;
   const philosophy = allContentfulSections.edges.filter(
-    (section) => section.node.title === "Philosophie"
+    (section) =>
+      section.node.title === "Philosophie" ||
+      section.node.title === "Philosophy"
   )[0].node;
   const team = allContentfulSections.edges.filter(
-    (section) => section.node.title === "L'équipe"
+    (section) =>
+      section.node.title === "L'équipe" || section.node.title === "The team"
   )[0].node;
   const teamMember = allContentfulSections.edges.filter(
-    (section) => section.node.title === "Membre de l'équipe"
+    (section) =>
+      section.node.title === "Membre de l'équipe" ||
+      section.node.title === "Team member"
   )[0].node;
   const hero = allContentfulSections.edges.filter(
-    (section) => section.node.title === "Accueil"
+    (section) =>
+      section.node.title === "Accueil" || section.node.title === "Home"
   )[0].node;
   const about = allContentfulSections.edges.filter(
-    (section) => section.node.title === "À propos"
+    (section) =>
+      section.node.title === "À propos" || section.node.title === "About us"
   )[0].node;
   const contact = allContentfulContact.edges[0].node;
   const footer = allContentfulFooter.nodes[0];
 
-  const [showPage, setShowPage] = useState(true);
-  const [showLoader, setShowLoader] = useState(false);
+  const [showPage, setShowPage] = useState(false);
 
   useEffect(() => {
-    // let about = document.getElementById("about");
-    // if (about && props.location.hash === "#a-propos") {
-    //   about.scrollIntoView({ behavior: "smooth" }, true);
-    // }
-
-    if (showLoader) {
-      setTimeout(() => {
-        setShowLoader(false);
-      }, 1800);
-    }
+    setInitialRenderComplete(true);
     if (!showPage) {
       setTimeout(() => {
         setShowPage(true);
-      }, 1);
+      }, 4400);
     }
 
     return () => {};
-  }, [
-    showPage,
-    showLoader,
-    // props.location.hash
-  ]);
+  }, [showPage]);
 
-  return (
-    <div>
+  if (initialRenderComplete) {
+    return (
       <Layout
         menu={menu}
         navLinks={navLinks}
         showPage={showPage}
         footer={footer}
       >
-        {/* <FirstLoader image={loader} show={showLoader}></FirstLoader> */}
-        {showPage && !showLoader && (
-          <ParallaxProvider>
-            <Hero hero={hero} />
-            <About about={about} />
-            <Team team={team} teamMember={teamMember} />
-            <Philosophy philosophy={philosophy} />
-            <Services services={services} support={support} />
-            <Contact contactData={contact} />
-          </ParallaxProvider>
+        {!showPage && <Intro />}
+        {showPage && (
+          <SlideProvider>
+            <ParallaxProvider>
+              <Hero hero={hero} />
+              <About about={about} />
+              <Team team={team} teamMember={teamMember} />
+              <Philosophy philosophy={philosophy} />
+              <Services services={services} support={support} />
+              <Contact contactData={contact} />
+            </ParallaxProvider>
+          </SlideProvider>
         )}
       </Layout>
-    </div>
-  );
+    );
+  } else {
+    return null;
+  }
 }
 
 export const Head = () => <SEO />;
@@ -145,13 +147,13 @@ export const query = graphql`
               id
               images {
                 id
-                gatsbyImageData
+                gatsbyImageData(quality: 80)
               }
             }
             ... on ContentfulImage {
               id
               image {
-                gatsbyImageData
+                gatsbyImageData(quality: 80)
               }
             }
             ... on ContentfulTeamMember {
@@ -164,7 +166,7 @@ export const query = graphql`
               email
               linkedIn
               image {
-                gatsbyImageData
+                gatsbyImageData(quality: 80)
                 description
               }
               professionalTitles
