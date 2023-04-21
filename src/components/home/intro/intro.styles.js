@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  height: 100vh;
+  height: 100svh;
   width: 100vw;
   position: relative;
 `;

@@ -7,7 +7,7 @@ export const Overlay = styled(motion.div)`
   top: 0;
   left: 0;
   z-index: 999;
-  height: 100vh;
+  height: 100svh;
   width: 100%;
   overflow: hidden;
   display: flex;
