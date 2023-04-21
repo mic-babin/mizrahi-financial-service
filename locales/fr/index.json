@@ -7,5 +7,10 @@
   "closeEmail": "Fermer",
   "sendEmail": "Envoyer",
   "fieldRequired": "Ce champs est requis.",
-  "validEmail": "Entrer un courriel valide"
+  "validEmail": "Entrer un courriel valide",
+  "knowMore": "En savoir plus",
+  "minimize": "Réduire",
+  "readMore": "En lire plus",
+  "readBio": "Lire Bio",
+  "address": "adresse"
 }

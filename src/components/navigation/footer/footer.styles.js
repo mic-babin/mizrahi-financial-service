@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   border-bottom: 1px solid #2b2929;
   padding-top: 75px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 
   background-color: #e7e3da;
   @media (max-width: 767px) {
@@ -57,7 +57,7 @@ export const Arrow = styled.img`
 
 export const Copyrights = styled.div`
   padding-top: 30px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 20px;
   font-family: "SF-Display-Light";
   text-decoration: none;
@@ -72,5 +72,13 @@ export const Copyrights = styled.div`
     &:hover {
       color: #2b2929;
     }
+  }
+`;
+
+export const Conception = styled(Copyrights)`
+  padding-top: 1.5rem;
+  font-size: 14px;
+  @media (max-width: 576px) {
+    padding-top: 50px;
   }
 `;

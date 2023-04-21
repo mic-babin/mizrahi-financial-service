@@ -3,6 +3,7 @@ import { Wrapper, H2, H3, Address } from "./contact.styles";
 import LinkedInSrc from "../../../assets/images/icons/LinkedIn-Black.svg";
 import ContactForm from "./contact-form.component";
 import { motion } from "framer-motion";
+import { Trans } from "react-i18next";
 
 const Contact = ({ contactData }) => {
   const { title, address, contact, contactForm } = contactData;
@@ -41,7 +42,9 @@ const Contact = ({ contactData }) => {
                 }}
                 viewport={{ once: true }}
               >
-                <H3>ADRESSE</H3>
+                <H3>
+                  <Trans>address</Trans>
+                </H3>
                 {address &&
                   address
                     .split(",")

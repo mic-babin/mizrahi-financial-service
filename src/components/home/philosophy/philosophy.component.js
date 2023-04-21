@@ -11,7 +11,7 @@ const Philosophy = ({ philosophy }) => {
       <div className="scroll-to" id="philosophie"></div>
       <Wrapper>
         <div className="container no-left">
-          <SectionTitle title={title} />
+          <SectionTitle title={title} pa={true} />
           <PhilosophyCarousel components={components} />
         </div>
       </Wrapper>

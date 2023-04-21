@@ -18,6 +18,7 @@ import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { useIsSmall } from "../../../utils/media-query.hook";
 import ArrowSrc from "../../../assets/images/icons/diagonal-arrow.svg";
 import { useInnerElementMousePosition } from "../../../utils/inner-element-mouse-position.hook";
+import { Trans } from "gatsby-plugin-react-i18next";
 
 const TeamCarouselCard = ({ item, index, carousel }) => {
   const {
@@ -76,7 +77,7 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
                     type: "ease",
                   }}
                 >
-                  LIRE BIO
+                  <Trans>readBio</Trans>
                 </Cursor>
               )}
             </AnimatePresence>
@@ -118,7 +119,7 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
           <Description>{renderRichText(bio)}</Description>
 
           <ModalButton className="pe-3" onClick={toggleModal}>
-            Fermer
+            <Trans>closeEmail</Trans>
           </ModalButton>
         </ModalCard.Body>
       </ModalCard>

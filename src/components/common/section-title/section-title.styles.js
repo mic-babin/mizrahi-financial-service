@@ -30,6 +30,7 @@ export const H2 = styled(motion.h2)`
   @media (max-width: 576px) {
     font-size: 30px;
     line-height: 34px;
+    padding-top: 100px;
   }
 
   p {
@@ -48,6 +49,10 @@ export const H2 = styled(motion.h2)`
     @media (max-width: 576px) {
       text-indent: 150px;
     }
+
+    @media (max-width: 576px) {
+      text-indent: 0px;
+    }
   }
 
   .title {
@@ -62,11 +67,18 @@ export const H2 = styled(motion.h2)`
       top: 62px;
     }
 
+    @media (max-width: 576px) {
+      /* margin-top: -10px; */
+    }
+
     &::before {
       content: "•";
       position: absolute;
       left: -20px;
       top: 0px;
+      @media (max-width: 576px) {
+        left: -30px;
+      }
     }
   }
 `;

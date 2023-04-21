@@ -41,7 +41,7 @@ export const Input = styled.input`
 
     @media (max-width: 576px) {
       font-size: 12px;
-      letter-spacing: 2.4px;
+      letter-spacing: 0.2px;
     }
   }
 `;
@@ -70,7 +70,7 @@ export const TextArea = styled.textarea`
 
     @media (max-width: 576px) {
       font-size: 12px;
-      letter-spacing: 2.4px;
+      letter-spacing: 0.2px;
     }
   }
 `;

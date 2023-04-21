@@ -19,6 +19,7 @@ import {
 } from "../../../utils/media-query.hook";
 import { SlideContext } from "../../../context/slide.context";
 import { useSetDimensionBrowserResize } from "../../../utils/set-dimension-browser-resize.hook";
+import { Trans } from "gatsby-plugin-react-i18next";
 
 const PhilosophyCarouselCard = ({ item, index }) => {
   return (
@@ -91,7 +92,7 @@ const ItemTwo = ({ item, index }) => {
         <TextTwo id={`p-${index}`}>{renderRichText(item.paragraphs)}</TextTwo>
       </TextWrapper>
       <Button onClick={() => toggleOpen()}>
-        {open ? "RÉDUIRE" : "EN LIRE PLUS"}{" "}
+        {open ? <Trans>minimize</Trans> : <Trans>readMore</Trans>}
         <img src={open ? UpSrc : DownSrc} alt="Arrow" />
       </Button>
     </Item>

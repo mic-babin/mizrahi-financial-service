@@ -110,6 +110,7 @@ export const Button = styled.button`
   letter-spacing: 3.2px;
   background-color: transparent;
   border: none;
+  text-transform: uppercase;
   img {
     margin-left: 12px;
   }

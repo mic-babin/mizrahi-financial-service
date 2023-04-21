@@ -37,6 +37,7 @@ export const H3 = styled(motion.h3)`
   padding-top: 80px;
   font-size: 14px;
   letter-spacing: 2.8px;
+  text-transform: uppercase;
 
   &:nth-of-type(2) {
     padding-top: 70px;

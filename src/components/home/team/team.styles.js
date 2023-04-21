@@ -211,6 +211,7 @@ export const Cursor = styled(motion.div)`
   color: #2b2929;
   border-radius: 50%;
   transform: scale(0);
+  text-transform: uppercase;
 `;
 
 export const FormButton = styled.button`

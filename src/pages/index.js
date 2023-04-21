@@ -33,22 +33,31 @@ export default function Homepage(props) {
     (section) => section.node.title === "Services"
   )[0].node;
   const support = allContentfulSections.edges.filter(
-    (section) => section.node.title === "Notre démarche d’accompagnement"
+    (section) =>
+      section.node.title === "Notre démarche d’accompagnement" ||
+      section.node.title === "Our support approach"
   )[0].node;
   const philosophy = allContentfulSections.edges.filter(
-    (section) => section.node.title === "Philosophie"
+    (section) =>
+      section.node.title === "Philosophie" ||
+      section.node.title === "Philosophy"
   )[0].node;
   const team = allContentfulSections.edges.filter(
-    (section) => section.node.title === "L'équipe"
+    (section) =>
+      section.node.title === "L'équipe" || section.node.title === "The team"
   )[0].node;
   const teamMember = allContentfulSections.edges.filter(
-    (section) => section.node.title === "Membre de l'équipe"
+    (section) =>
+      section.node.title === "Membre de l'équipe" ||
+      section.node.title === "Team member"
   )[0].node;
   const hero = allContentfulSections.edges.filter(
-    (section) => section.node.title === "Accueil"
+    (section) =>
+      section.node.title === "Accueil" || section.node.title === "Home"
   )[0].node;
   const about = allContentfulSections.edges.filter(
-    (section) => section.node.title === "À propos"
+    (section) =>
+      section.node.title === "À propos" || section.node.title === "About us"
   )[0].node;
   const contact = allContentfulContact.edges[0].node;
   const footer = allContentfulFooter.nodes[0];
@@ -138,13 +147,13 @@ export const query = graphql`
               id
               images {
                 id
-                gatsbyImageData
+                gatsbyImageData(quality: 80)
               }
             }
             ... on ContentfulImage {
               id
               image {
-                gatsbyImageData
+                gatsbyImageData(quality: 80)
               }
             }
             ... on ContentfulTeamMember {
@@ -157,7 +166,7 @@ export const query = graphql`
               email
               linkedIn
               image {
-                gatsbyImageData
+                gatsbyImageData(quality: 80)
                 description
               }
               professionalTitles

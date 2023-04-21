@@ -7,5 +7,10 @@
   "closeEmail": "Close",
   "sendEmail": "Send",
   "fieldRequired": "This field is required.",
-  "validEmail": "Enter a valid email."
+  "validEmail": "Enter a valid email.",
+  "knowMore": "Know More",
+  "minimize": "Minimize",
+  "readMore": "Read More",
+  "readBio": "Read Bio",
+  "address": "address"
 }

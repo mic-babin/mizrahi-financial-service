@@ -4,6 +4,7 @@ import LeftSrc from "../../../assets/images/icons/left-arrow.svg";
 import RightSrc from "../../../assets/images/icons/right-arrow.svg";
 import { useIsSmall } from "../../../utils/media-query.hook";
 import { SlideContext } from "../../../context/slide.context";
+import { Trans } from "gatsby-plugin-react-i18next";
 
 const CarouselButton = ({ next, previous, position, textRight, ...rest }) => {
   const {
@@ -20,7 +21,9 @@ const CarouselButton = ({ next, previous, position, textRight, ...rest }) => {
   return (
     <Wrapper style={position}>
       {!isSmall && (
-        <Text style={textRight && { left: "160px" }}>En savoir plus</Text>
+        <Text style={textRight && { left: "160px" }}>
+          <Trans>knowMore</Trans>
+        </Text>
       )}
       <Button className="link" onClick={() => previous()}>
         <div>

@@ -37,13 +37,14 @@ $container-max-widths: (
   font-display: auto;
 }
 
-html {
-  --cursor-color: rgba(37, 91, 91, 1);
-}
+// html {
+//   --cursor-color: rgba(37, 91, 91, 1);
+// }
 
-html.no-cursor {
-  --cursor-color: rgba(37, 91, 91, 0);
-}
+// html.no-cursor {
+//   --cursor-color: rgba(37, 91, 91, 0);
+// }
+
 body {
   font-family: "SF-Display-Regular";
   font-size: 14px;

@@ -6,6 +6,7 @@ import {
   LinkWrapper,
   Arrow,
   Copyrights,
+  Conception,
 } from "./footer.styles";
 import LogoSrc from "../../../assets/images/logos/mz.svg";
 import ArrowSrc from "../../../assets/images/icons/diagonal-arrow.svg";
@@ -30,7 +31,9 @@ const Footer = ({ navLinks, footer }) => {
             <Copyrights>
               <div>{copyrights}</div>
               <div>{entreprise}</div>
-              <div>{renderRichText(conception)}</div>
+              <Conception className="d-none d-sm-block">
+                {renderRichText(conception)}
+              </Conception>
             </Copyrights>
           </div>
           <div className="col-sm-6 col-lg-3 d-flex flex-column justify-content-center text-center text-sm-start d-sm-block">
@@ -56,6 +59,9 @@ const Footer = ({ navLinks, footer }) => {
                 {plaintesEtDiffrents.image.title}
                 <Arrow src={ArrowSrc} alt="left-arrow" />
               </LinkWrapper>
+              <Conception className="d-block d-sm-none">
+                {renderRichText(conception)}
+              </Conception>
             </div>
           </div>
         </div>
