@@ -25,7 +25,7 @@ export const Input = styled.input`
   background-color: #f7f7f1;
 
   @media (max-width: 576px) {
-    padding: 1.35rem 1.75rem;
+    padding: 1.35rem 1.25rem;
   }
 
   &:focus {
@@ -54,7 +54,7 @@ export const TextArea = styled.textarea`
   padding: 1.35rem 2.2rem;
   background-color: #f7f7f1;
   @media (max-width: 576px) {
-    padding: 1.35rem 1.75rem;
+    padding: 1.35rem 1.25rem;
   }
 
   &:focus {
