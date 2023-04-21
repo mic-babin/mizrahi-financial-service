@@ -101,23 +101,30 @@ export const Card = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
+  object-position: right top;
   max-height: 700px;
-  @media (max-width: 1249px) {
-    max-height: 600px;
-  }
 `;
 
 export const Image = styled(GatsbyImage)`
   border-radius: 26px;
   max-height: 700px;
+
   @media (max-width: 1249px) {
     max-height: 600px;
   }
-  @media (max-width: 767px) {
-    border-radius: 22px;
+  @media (max-width: 1099px) {
+    max-height: 550px;
   }
+  @media (max-width: 991px) {
+    max-height: 600px;
+  }
+  @media (max-width: 767px) {
+    max-height: 550px;
+  }
+
   @media (max-width: 576px) {
     border-radius: 18px;
+    max-height: 375px;
   }
 `;
 
@@ -132,6 +139,7 @@ export const Name = styled.div`
   }
 
   span {
+    display: block;
     font-size: 22px;
     font-style: italic;
     text-transform: lowercase;

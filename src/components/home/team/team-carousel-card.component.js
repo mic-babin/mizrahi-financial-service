@@ -61,7 +61,11 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
             onMouseEnter={toggleCursor}
             onMouseLeave={toggleCursor}
           >
-            <Image image={getImage(image.gatsbyImageData)} alt="" />
+            <Image
+              style={{ objectPosition: "center center" }}
+              image={getImage(image.gatsbyImageData)}
+              alt=""
+            />
             <AnimatePresence initial={false}>
               {showCursor && (
                 <Cursor
@@ -84,10 +88,10 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
           </ImageWrapper>
         </div>
         <Name>
-          {name}
-          {title && ","} <span>{title}</span>
+          {name},<span>{title}</span>
         </Name>
         <Description>
+          <div></div>
           {!isSmall && professionalTitles}
           {isSmall && (
             <ul>
