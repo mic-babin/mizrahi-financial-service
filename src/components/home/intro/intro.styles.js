@@ -17,7 +17,7 @@ export const LogoWrapper = styled.div`
   z-index: 1000;
 
   @media (max-width: 576px) {
-    height: 30vh;
+    height: 33vh;
   }
 `;
 
@@ -29,7 +29,7 @@ export const FrontWrapper = styled.div`
   width: 0%;
   overflow: hidden;
 
-  animation: slideOpen 3s linear;
+  animation: slideOpen 3.7s linear;
   animation-delay: 0.3s;
 
   @keyframes slideOpen {
@@ -50,7 +50,7 @@ export const FrontWrapper = styled.div`
   }
 
   @media (max-width: 576px) {
-    height: 30vh;
+    height: 33vh;
   }
 `;
 
@@ -59,7 +59,7 @@ export const Placeholder = styled.img`
   opacity: 0;
 
   @media (max-width: 576px) {
-    height: 30vh;
+    height: 33vh;
   }
 `;
 
@@ -69,7 +69,7 @@ export const FrontLogo = styled(motion.img)`
   top: 0;
   left: 0;
   opacity: 0;
-  animation: fadeFull 3s linear;
+  animation: fadeFull 3.7s linear;
   animation-delay: 0.3s;
 
   @keyframes fadeFull {
@@ -83,11 +83,11 @@ export const FrontLogo = styled(motion.img)`
     }
   }
   @media (max-width: 576px) {
-    height: 30vh;
+    height: 33vh;
   }
 `;
 export const BackLogo = styled(FrontLogo)`
-  animation: fade 2.9s linear;
+  animation: fade 3.6s linear;
   animation-delay: 0.3s;
   @keyframes fade {
     0%,
@@ -102,6 +102,6 @@ export const BackLogo = styled(FrontLogo)`
 `;
 
 export const BottomLogo = styled(FrontLogo)`
-  animation: fadeFull 3s linear;
+  animation: fadeFull 3.7s linear;
   animation-delay: 0.3s;
 `;

@@ -15,10 +15,10 @@ import linkedInSrc from "../../../assets/images/icons/LinkedIn-Black.svg";
 import { getImage } from "gatsby-plugin-image";
 import { AnimatePresence } from "framer-motion";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
-import { useIsSmall } from "../../../utils/media-query.hook";
+import { useIsMedium, useIsSmall } from "../../../utils/media-query.hook";
 import ArrowSrc from "../../../assets/images/icons/diagonal-arrow.svg";
 import { useInnerElementMousePosition } from "../../../utils/inner-element-mouse-position.hook";
-import { Trans } from "gatsby-plugin-react-i18next";
+import { Trans, useI18next } from "gatsby-plugin-react-i18next";
 
 const TeamCarouselCard = ({ item, index, carousel }) => {
   const {
@@ -34,8 +34,12 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
   } = item;
 
   const isSmall = useIsSmall();
+  const isMedium = useIsMedium();
   const card = useRef();
   const position = useInnerElementMousePosition(card);
+  const {
+    i18n: { language },
+  } = useI18next();
 
   const [showCursor, setShowCursor] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -92,12 +96,29 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
         </Name>
         <Description>
           <div></div>
-          {!isSmall && professionalTitles}
-          {isSmall && (
+          {!isMedium && professionalTitles}
+          {isMedium && (
             <ul>
-              {professionalTitles.map((title, index) => (
-                <li key={index}>{title}</li>
-              ))}
+              {!isSmall &&
+                professionalTitles.map((title, index) => (
+                  <li key={index}>{title}</li>
+                ))}
+              {isSmall &&
+                professionalTitles.map((title, index) => {
+                  let titleArr = title.split(",");
+                  console.log(titleArr.length);
+                  if (titleArr.length !== 2 || language !== "en") {
+                    return <li key={index}>{title}</li>;
+                  } else {
+                    return (
+                      <li key={index}>
+                        {titleArr[0]},
+                        <br />
+                        {titleArr[1]}
+                      </li>
+                    );
+                  }
+                })}
             </ul>
           )}
         </Description>
@@ -107,7 +128,7 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
             <img src={linkedInSrc} alt="LinkedIn Logo" />
           </a>
         </Contact>
-        {isSmall && (
+        {isMedium && (
           <FormButton className="mt-3 p-0 pt-1" onClick={toggleModal}>
             {bioButton}
             <Arrow src={ArrowSrc} alt="right-arrow" />

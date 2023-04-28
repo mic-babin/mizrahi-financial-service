@@ -142,7 +142,6 @@ export const Name = styled.div`
     display: block;
     font-size: 22px;
     font-style: italic;
-    text-transform: lowercase;
   }
 `;
 
@@ -185,7 +184,7 @@ export const Contact = styled.div`
     font-size: 22px;
     line-height: 27px;
     color: #2b2929;
-    text-decoration: none;
+    /* text-decoration: none; */
 
     @media (max-width: 1599px) {
       font-size: 20px;
@@ -198,7 +197,7 @@ export const Contact = styled.div`
     }
 
     &:first-child {
-      border-bottom: 1px solid #2b2929;
+      /* border-bottom: 1px solid #2b2929; */
     }
 
     &:hover {

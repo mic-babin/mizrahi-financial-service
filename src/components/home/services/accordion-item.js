@@ -22,9 +22,9 @@ const AccordionItem = ({ item, index, currentIndex, setCurrentIndex }) => {
   };
 
   useEffect(() => {
-    if (!isMedium) {
-      setOpen(currentIndex === index);
-    }
+    // if (!isMedium) {
+    // setOpen(currentIndex === index);
+    // }
     if (open) {
       // OPEN
       bodyControls.start({

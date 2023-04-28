@@ -54,6 +54,7 @@ const Footer = ({ navLinks, footer }) => {
                 className="text-decoration-underline"
                 as="a"
                 target="blank"
+                open
                 href={plaintesEtDiffrents.image.publicUrl}
               >
                 {plaintesEtDiffrents.image.title}
