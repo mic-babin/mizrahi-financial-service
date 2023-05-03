@@ -162,16 +162,30 @@ export const Description = styled.div`
   @media (max-width: 1599px) {
     font-size: 20px;
     line-height: 32px;
+
+    .pro-title {
+      font-size: 16px;
+      line-height: 27px;
+    }
   }
 
   @media (max-width: 1249px) {
     font-size: 18px;
     line-height: 29px;
+    .pro-title {
+      font-size: 15px;
+      line-height: 26px;
+    }
   }
 
   @media (max-width: 767px) {
     font-size: 18px;
     line-height: 20px;
+
+    li {
+      font-size: 15px;
+      line-height: 26px;
+    }
   }
 `;
 

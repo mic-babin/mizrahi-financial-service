@@ -65,11 +65,13 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
             onMouseEnter={toggleCursor}
             onMouseLeave={toggleCursor}
           >
-            <Image
-              style={{ objectPosition: "center center" }}
-              image={getImage(image.gatsbyImageData)}
-              alt=""
-            />
+            {image && (
+              <Image
+                style={{ objectPosition: "center center" }}
+                image={getImage(image.gatsbyImageData)}
+                alt=""
+              />
+            )}
             <AnimatePresence initial={false}>
               {showCursor && (
                 <Cursor
@@ -91,44 +93,56 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
             </AnimatePresence>
           </ImageWrapper>
         </div>
-        <Name>
-          {name},<span>{title}</span>
-        </Name>
-        <Description>
-          <div></div>
-          {!isMedium && professionalTitles}
-          {isMedium && (
-            <ul>
-              {!isSmall &&
-                professionalTitles.map((title, index) => (
-                  <li key={index}>{title}</li>
-                ))}
-              {isSmall &&
-                professionalTitles.map((title, index) => {
-                  let titleArr = title.split(",");
-                  console.log(titleArr.length);
-                  if (titleArr.length !== 2 || language !== "en") {
-                    return <li key={index}>{title}</li>;
-                  } else {
-                    return (
-                      <li key={index}>
-                        {titleArr[0]},
-                        <br />
-                        {titleArr[1]}
-                      </li>
-                    );
-                  }
-                })}
-            </ul>
-          )}
-        </Description>
+        {name && (
+          <Name>
+            {name},{title && <span>{title}</span>}
+          </Name>
+        )}
+        {professionalTitles && (
+          <Description>
+            <div></div>
+            {!isMedium &&
+              professionalTitles &&
+              professionalTitles.map((title, index) => (
+                <div key={index} className="pro-title">
+                  {title}
+                </div>
+              ))}
+            {isMedium && (
+              <ul>
+                {!isSmall &&
+                  professionalTitles.map((title, index) => (
+                    <li key={index}>{title}</li>
+                  ))}
+                {isSmall &&
+                  professionalTitles.map((title, index) => {
+                    let titleArr = title.split(",");
+                    console.log(titleArr.length);
+                    if (titleArr.length !== 2) {
+                      return <li key={index}>{title}</li>;
+                    } else {
+                      return (
+                        <li key={index}>
+                          {titleArr[0]},
+                          <br />
+                          {titleArr[1]}
+                        </li>
+                      );
+                    }
+                  })}
+              </ul>
+            )}
+          </Description>
+        )}
         <Contact>
-          <a href={`mailto:${email}`}>{email}</a>
-          <a href={linkedIn} target="_blank" rel="noreferrer">
-            <img src={linkedInSrc} alt="LinkedIn Logo" />
-          </a>
+          {email && <a href={`mailto:${email}`}>{email}</a>}
+          {linkedIn && (
+            <a href={linkedIn} target="_blank" rel="noreferrer">
+              <img src={linkedInSrc} alt="LinkedIn Logo" />
+            </a>
+          )}
         </Contact>
-        {isMedium && (
+        {isMedium && bioButton && (
           <FormButton className="mt-3 p-0 pt-1" onClick={toggleModal}>
             {bioButton}
             <Arrow src={ArrowSrc} alt="right-arrow" />
@@ -137,11 +151,13 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
       </Card>
       <ModalCard show={showModal} onHide={toggleModal} centered size="lg">
         <ModalCard.Body className="p-5">
-          <Name>
-            {name}
-            {title && ","} <span>{title}</span>
-          </Name>
-          <Description>{renderRichText(bio)}</Description>
+          {name && (
+            <Name>
+              {name}
+              {title && ","} {title && <span>{title}</span>}
+            </Name>
+          )}
+          {bio && <Description>{renderRichText(bio)}</Description>}
 
           <ModalButton className="pe-3" onClick={toggleModal}>
             <Trans>closeEmail</Trans>
