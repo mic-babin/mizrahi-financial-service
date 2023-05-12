@@ -55,6 +55,9 @@ export const TopLine = styled(motion.div)`
   border-top: 1px solid #2b2929;
   max-width: 83%;
   padding-bottom: 10px;
+  @media (max-width: 1600px) {
+    max-width: 84%;
+  }
 
   @media (max-width: 991px) {
     max-width: 90%;
