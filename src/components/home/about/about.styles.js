@@ -53,7 +53,7 @@ export const Paragraph = styled(motion.div)`
 
 export const TopLine = styled(motion.div)`
   border-top: 1px solid #2b2929;
-  max-width: 82%;
+  max-width: 83%;
   padding-bottom: 10px;
 
   @media (max-width: 991px) {
