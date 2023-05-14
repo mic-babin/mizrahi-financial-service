@@ -15,7 +15,6 @@ import Intro from "../components/home/intro/intro.component";
 import { SlideProvider } from "../context/slide.context";
 
 export default function Homepage(props) {
-  const [initialRenderComplete, setInitialRenderComplete] = useState(false);
   const {
     data: {
       allContentfulSections,
@@ -65,7 +64,6 @@ export default function Homepage(props) {
   const [showPage, setShowPage] = useState(false);
 
   useEffect(() => {
-    setInitialRenderComplete(true);
     if (!showPage) {
       setTimeout(() => {
         setShowPage(true);
@@ -75,32 +73,23 @@ export default function Homepage(props) {
     return () => {};
   }, [showPage]);
 
-  if (initialRenderComplete) {
-    return (
-      <Layout
-        menu={menu}
-        navLinks={navLinks}
-        showPage={showPage}
-        footer={footer}
-      >
-        {!showPage && <Intro />}
-        {showPage && (
-          <SlideProvider>
-            <ParallaxProvider>
-              <Hero hero={hero} />
-              <About about={about} />
-              <Team team={team} teamMember={teamMember} />
-              <Philosophy philosophy={philosophy} />
-              <Services services={services} support={support} />
-              <Contact contactData={contact} />
-            </ParallaxProvider>
-          </SlideProvider>
-        )}
-      </Layout>
-    );
-  } else {
-    return null;
-  }
+  return (
+    <Layout menu={menu} navLinks={navLinks} showPage={showPage} footer={footer}>
+      {!showPage && <Intro />}
+      {showPage && (
+        <SlideProvider>
+          <ParallaxProvider>
+            <Hero hero={hero} />
+            <About about={about} />
+            <Team team={team} teamMember={teamMember} />
+            <Philosophy philosophy={philosophy} />
+            <Services services={services} support={support} />
+            <Contact contactData={contact} />
+          </ParallaxProvider>
+        </SlideProvider>
+      )}
+    </Layout>
+  );
 }
 
 export const Head = () => <SEO />;
@@ -135,9 +124,6 @@ export const query = graphql`
               title
               kicker {
                 raw
-              }
-              subtitlte {
-                subtitlte
               }
               paragraphs {
                 raw
