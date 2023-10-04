@@ -62,7 +62,7 @@ const Hero = ({ hero }) => {
             <Parallax translateY={[35, 60]}>
               <Image
                 image={getImage(images[0].gatsbyImageData)}
-                alt="Sarah-Olivia Mizrahi"
+                alt="Sarah Mizrahi"
                 loading="eager"
               />
             </Parallax>
@@ -82,14 +82,14 @@ const Hero = ({ hero }) => {
               <Image
                 className="image-1"
                 image={getImage(images[1].gatsbyImageData)}
-                alt="Sarah-Olivia Mizrahi"
+                alt="Sarah Mizrahi"
                 loading="eager"
               />
 
               <Image
                 className="image-2"
                 image={getImage(images[2].gatsbyImageData)}
-                alt="Sarah-Olivia Mizrahi"
+                alt="Sarah Olivia Mizrahi"
                 loading="eager"
               />
             </Parallax>
@@ -155,7 +155,7 @@ const Hero = ({ hero }) => {
               <Image
                 className="image-6"
                 image={getImage(images[5].gatsbyImageData)}
-                alt="Sarah-Olivia Mizrahi"
+                alt="Sarah Olivia Mizrahi"
                 loading="eager"
               />
 

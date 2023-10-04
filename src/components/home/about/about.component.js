@@ -49,7 +49,7 @@ const About = ({ about }) => {
               >
                 <Image
                   image={getImage(image.gatsbyImageData)}
-                  alt="Sara-Olivia Mizrahi et David Mizrahi"
+                  alt="Sarah Olivia Mizrahi et David Mizrahi"
                 />
               </ImageWrapper>
             </div>
