@@ -69,7 +69,7 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
               <Image
                 style={{ objectPosition: "center center" }}
                 image={getImage(image.gatsbyImageData)}
-                alt=""
+                alt={name}
               />
             )}
             <AnimatePresence initial={false}>
@@ -95,7 +95,7 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
         </div>
         {name && (
           <Name>
-            {name},{title && <span>{title}</span>}
+            <h2>{name}</h2>,{title && <span>{title}</span>}
           </Name>
         )}
         {professionalTitles && (

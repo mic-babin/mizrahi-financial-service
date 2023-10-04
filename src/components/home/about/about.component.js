@@ -47,7 +47,10 @@ const About = ({ about }) => {
                 }}
                 viewport={{ once: true }}
               >
-                <Image image={getImage(image.gatsbyImageData)} alt="" />
+                <Image
+                  image={getImage(image.gatsbyImageData)}
+                  alt="Sara-Olivia Mizrahi et David Mizrahi"
+                />
               </ImageWrapper>
             </div>
             <Paragraph

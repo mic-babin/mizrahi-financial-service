@@ -1,7 +1,7 @@
 import React from "react";
 import TopSrc from "../../../assets/images/logos/logo-top.svg";
-import BottomSrcFr from "../../../assets/images/logos/logo-bottom-fr.svg";
-import BottomSrcEn from "../../../assets/images/logos/logo-bottom-en.svg";
+import BottomSrcFr from "../../../assets/images/logos/logo-bottom-fr-v2.svg";
+import BottomSrcEn from "../../../assets/images/logos/logo-bottom-en-v2.svg";
 import {
   Wrapper,
   FrontLogo,

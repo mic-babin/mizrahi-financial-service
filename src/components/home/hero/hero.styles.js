@@ -37,7 +37,7 @@ export const TextWrapper = styled.div`
   }
 `;
 
-export const H2 = styled(motion.h2)`
+export const H2 = styled(motion.h3)`
   font-size: 16px;
   letter-spacing: 3.2px;
 

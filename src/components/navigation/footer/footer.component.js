@@ -27,7 +27,7 @@ const Footer = ({ navLinks, footer }) => {
       <div className="container">
         <div className="row">
           <div className="col-lg-6 d-flex flex-column justify-content-center text-center text-sm-start d-sm-block">
-            <Logo src={LogoSrc} alt="" />
+            <Logo src={LogoSrc} alt="Mizrahi Services Financiers" />
             <Copyrights>
               <div>{copyrights}</div>
               <div>{entreprise}</div>

@@ -134,6 +134,15 @@ export const Name = styled.div`
   font-size: 42px;
   font-family: "TimesNow";
 
+  h2 {
+    display: inline;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    font-size: 42px;
+    font-family: "TimesNow";
+    margin: 0;
+  }
+
   @media (max-width: 576px) {
     font-size: 30px;
   }

@@ -62,7 +62,7 @@ const Hero = ({ hero }) => {
             <Parallax translateY={[35, 60]}>
               <Image
                 image={getImage(images[0].gatsbyImageData)}
-                alt=""
+                alt="Sarah-Olivia Mizrahi"
                 loading="eager"
               />
             </Parallax>
@@ -82,14 +82,14 @@ const Hero = ({ hero }) => {
               <Image
                 className="image-1"
                 image={getImage(images[1].gatsbyImageData)}
-                alt=""
+                alt="Sarah-Olivia Mizrahi"
                 loading="eager"
               />
 
               <Image
                 className="image-2"
                 image={getImage(images[2].gatsbyImageData)}
-                alt=""
+                alt="Sarah-Olivia Mizrahi"
                 loading="eager"
               />
             </Parallax>
@@ -108,7 +108,7 @@ const Hero = ({ hero }) => {
               <Image
                 className="image-3"
                 image={getImage(images[3].gatsbyImageData)}
-                alt=""
+                alt="David Mizrahi"
                 loading="eager"
               />
             </Parallax>
@@ -128,14 +128,14 @@ const Hero = ({ hero }) => {
               <Image
                 className="image-4"
                 image={getImage(images[4].gatsbyImageData)}
-                alt=""
+                alt="David Mizrahi"
                 loading="eager"
               />
 
               <Image
                 className="image-5"
                 image={getImage(images[5].gatsbyImageData)}
-                alt=""
+                alt="David Mizrahi"
                 loading="eager"
               />
             </Parallax>
@@ -155,14 +155,14 @@ const Hero = ({ hero }) => {
               <Image
                 className="image-6"
                 image={getImage(images[5].gatsbyImageData)}
-                alt=""
+                alt="Sarah-Olivia Mizrahi"
                 loading="eager"
               />
 
               <Image
                 className="image-7"
                 image={getImage(images[0].gatsbyImageData)}
-                alt=""
+                alt="Sarah-Olivia Mizrahi"
                 loading="eager"
               />
             </Parallax>
