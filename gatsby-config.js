@@ -17,8 +17,8 @@ const siteUrl = "http://localhost:8000/";
 
 module.exports = {
   siteMetadata: {
-    title: `Mizrahi - Services financiers | Financial Services`,
-    description: `David et Sarah Olivia Mizrahi créer de la valeur à travers de véritables connexions, pas de simples transactions. Voilà pourquoi nous prenons tout le temps qu’il faut pour apprendre à vous connaître, un client à la fois. Mizrahi - Services financiers | Financial Services`,
+    title: `Mizrahi Services Financiers | Mizrahi Financial Services`,
+    description: `Mizrahi Services financiers créer de la valeur à travers de véritables connexions, pas de simples transactions. Voilà pourquoi David et Sarah Olivia Mizrahi prennent le temps qu’il faut pour apprendre à vous connaître, un client à la fois. Mizrahi Financial Services`,
     twitterUsername: `@mizrahi`,
     image: `mz.svg`,
     siteUrl: `https://mizrahisf.com/`,
