@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby-plugin-react-i18next";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -100,7 +101,7 @@ export const Card = styled.div`
   }
 `;
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled(Link)`
   object-position: right top;
   max-height: 700px;
 `;

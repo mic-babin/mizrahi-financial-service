@@ -19,6 +19,7 @@ import { useIsMedium, useIsSmall } from "../../../utils/media-query.hook";
 import ArrowSrc from "../../../assets/images/icons/diagonal-arrow.svg";
 import { useInnerElementMousePosition } from "../../../utils/inner-element-mouse-position.hook";
 import { Trans, useI18next } from "gatsby-plugin-react-i18next";
+import slugify from "react-slugify";
 
 const TeamCarouselCard = ({ item, index, carousel }) => {
   const {
@@ -41,6 +42,7 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
     i18n: { language },
   } = useI18next();
 
+  const slug = slugify(name);
   const [showCursor, setShowCursor] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -60,7 +62,7 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
       <Card ref={card} id={`card-${index}`}>
         <div>
           <ImageWrapper
-            onClick={toggleModal}
+            to={"/" + slugify(name)}
             style={{ cursor: showCursor ? "none" : "pointer" }}
             onMouseEnter={toggleCursor}
             onMouseLeave={toggleCursor}
@@ -117,7 +119,6 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
                 {isSmall &&
                   professionalTitles.map((title, index) => {
                     let titleArr = title.split(",");
-                    console.log(titleArr.length);
                     if (titleArr.length !== 2) {
                       return <li key={index}>{title}</li>;
                     } else {
@@ -149,21 +150,6 @@ const TeamCarouselCard = ({ item, index, carousel }) => {
           </FormButton>
         )}
       </Card>
-      <ModalCard show={showModal} onHide={toggleModal} centered size="lg">
-        <ModalCard.Body className="p-5">
-          {name && (
-            <Name>
-              {name}
-              {title && ","} {title && <span>{title}</span>}
-            </Name>
-          )}
-          {bio && <Description>{renderRichText(bio)}</Description>}
-
-          <ModalButton className="pe-3" onClick={toggleModal}>
-            <Trans>closeEmail</Trans>
-          </ModalButton>
-        </ModalCard.Body>
-      </ModalCard>
     </div>
   );
 };

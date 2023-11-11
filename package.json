@@ -42,6 +42,7 @@
     "react-modal": "^3.16.1",
     "react-multi-carousel": "^2.8.2",
     "react-scroll-parallax": "^3.3.2",
+    "react-slugify": "^3.0.3",
     "sass": "^1.60.0",
     "styled-components": "^5.3.6",
     "uuid": "^9.0.0"

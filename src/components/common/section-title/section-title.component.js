@@ -5,7 +5,6 @@ import { useIsXSmall } from "../../../utils/media-query.hook";
 
 const SectionTitle = ({ title, kicker, mb, pa }) => {
   const isXSmall = useIsXSmall();
-  console.log(pa && isXSmall);
   return (
     <H2
       style={
