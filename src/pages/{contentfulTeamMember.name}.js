@@ -9,8 +9,10 @@ import { useIsMedium } from "../utils/media-query.hook";
 import { Trans } from "react-i18next";
 import { motion } from "framer-motion";
 import { Link } from "gatsby-plugin-react-i18next";
+import { useEffect } from "react";
 
 export default function Homepage(props) {
+  const isBrowser = typeof window !== "undefined";
   const {
     data: {
       allContentfulSections,
@@ -30,6 +32,9 @@ export default function Homepage(props) {
 
   const isMedium = useIsMedium();
 
+  useEffect(() => {
+    if (isBrowser) window.scrollTo(0, 0);
+  }, [isBrowser]);
   return (
     <Layout menu={menu} navLinks={navLinks} showPage={true} footer={footer}>
       <Container>
