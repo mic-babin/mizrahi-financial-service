@@ -13,8 +13,9 @@ import { useEffect } from "react";
 import DownSrc from "../assets/images/icons/down-arrow.svg";
 
 export default function TeamMember(props) {
-  const previousPath = JSON.parse(localStorage.getItem("previousPath"));
   const isBrowser = typeof window !== "undefined";
+  const previousPath =
+    isBrowser && JSON.parse(localStorage.getItem("previousPath"));
   const {
     data: {
       allContentfulSections,

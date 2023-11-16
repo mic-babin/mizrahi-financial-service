@@ -15,7 +15,9 @@ import Intro from "../components/home/intro/intro.component";
 import { SlideProvider } from "../context/slide.context";
 
 export default function Homepage(props) {
-  const previousPath = JSON.parse(localStorage.getItem("previousPath"));
+  const isBrowser = typeof window !== "undefined";
+  const previousPath =
+    isBrowser && JSON.parse(localStorage.getItem("previousPath"));
 
   const {
     data: {
@@ -66,10 +68,28 @@ export default function Homepage(props) {
   const [showPage, setShowPage] = useState(false);
 
   useEffect(() => {
+    if (previousPath) {
+      if (
+        previousPath.href.includes("8000") ||
+        previousPath.href.includes("mizrahisf")
+      ) {
+        setShowPage(true);
+        if (props.location.hash) {
+          if (document.getElementById(props.location.hash.split("#")[1])) {
+            const el = document.getElementById(
+              props.location.hash.split("#")[1]
+            );
+            setTimeout(() => {
+              el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 500);
+          }
+        }
+      }
+    }
     if (!showPage) {
       setTimeout(() => {
         setShowPage(true);
-      }, 4400);
+      }, 5500);
     }
 
     return () => {};
