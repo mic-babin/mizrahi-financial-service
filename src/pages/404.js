@@ -15,6 +15,8 @@ import Intro from "../components/home/intro/intro.component";
 import { SlideProvider } from "../context/slide.context";
 
 export default function Homepage(props) {
+  const previousPath = JSON.parse(localStorage.getItem("previousPath"));
+
   const {
     data: {
       allContentfulSections,

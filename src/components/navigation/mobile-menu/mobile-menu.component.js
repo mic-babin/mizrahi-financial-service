@@ -28,7 +28,7 @@ const MobileMenu = ({ modalIsOpen, setIsOpen, navLinks }) => {
               navLinks.map((link) => (
                 <MenuLink
                   key={link.id}
-                  to={link.url}
+                  to={"/" + link.url}
                   onClick={() => {
                     close();
                   }}

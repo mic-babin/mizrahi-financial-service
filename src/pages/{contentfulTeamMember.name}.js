@@ -10,8 +10,10 @@ import { Trans } from "react-i18next";
 import { motion } from "framer-motion";
 import { Link } from "gatsby-plugin-react-i18next";
 import { useEffect } from "react";
+import DownSrc from "../assets/images/icons/down-arrow.svg";
 
-export default function Homepage(props) {
+export default function TeamMember(props) {
+  const previousPath = JSON.parse(localStorage.getItem("previousPath"));
   const isBrowser = typeof window !== "undefined";
   const {
     data: {
@@ -33,6 +35,7 @@ export default function Homepage(props) {
   const isMedium = useIsMedium();
 
   useEffect(() => {
+    if (previousPath) console.log(previousPath);
     if (isBrowser) window.scrollTo(0, 0);
   }, [isBrowser]);
   return (
@@ -54,7 +57,8 @@ export default function Homepage(props) {
             }}
             viewport={{ once: true }}
           >
-            <Back to={"/"}>
+            <Back to={"/#equipe"}>
+              <img src={DownSrc} alt="Arrow" />
               <Trans>close</Trans>
             </Back>
           </BackWrapper>
@@ -105,13 +109,22 @@ const Back = styled(Link)`
   display: block;
   margin-left: auto;
   text-align: right;
-  font-weight: bold;
   color: #2b2929;
-  font-size: 20px;
+  padding: 0;
+  margin-top: 30px;
+  font-size: 16px;
+  letter-spacing: 3.2px;
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
   text-decoration: none;
 
   &:hover {
     color: #2b2929;
+  }
+  img {
+    transform: rotate(90deg) translateY(-3px);
+    margin-right: 12px;
   }
 `;
 

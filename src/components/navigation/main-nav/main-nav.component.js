@@ -25,7 +25,7 @@ const MainNav = ({ navLinks }) => {
           !isMedium &&
           links.map((link) => (
             <Button key={link.id}>
-              <Link to={link.url} className="link">
+              <Link to={"/" + link.url} className="link">
                 {link.text}
               </Link>
             </Button>

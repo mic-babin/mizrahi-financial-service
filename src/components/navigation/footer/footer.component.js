@@ -41,7 +41,11 @@ const Footer = ({ navLinks, footer }) => {
             <div className="row">
               {navLinks &&
                 navLinks.map((link) => (
-                  <LinkWrapper className="col-sm-6" to={link.url} key={link.id}>
+                  <LinkWrapper
+                    className="col-sm-6"
+                    to={"/" + link.url}
+                    key={link.id}
+                  >
                     {link.text}
                   </LinkWrapper>
                 ))}
