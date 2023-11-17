@@ -17,7 +17,7 @@ import { SlideProvider } from "../context/slide.context";
 export default function Homepage(props) {
   const isBrowser = typeof window !== "undefined";
   const previousPath =
-    isBrowser && JSON.parse(localStorage.getItem("previousPath"));
+    isBrowser && JSON.parse(sessionStorage.getItem("previousPath"));
 
   const {
     data: {

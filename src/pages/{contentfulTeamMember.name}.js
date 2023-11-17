@@ -15,7 +15,7 @@ import DownSrc from "../assets/images/icons/down-arrow.svg";
 export default function TeamMember(props) {
   const isBrowser = typeof window !== "undefined";
   const previousPath =
-    isBrowser && JSON.parse(localStorage.getItem("previousPath"));
+    isBrowser && JSON.parse(sessionStorage.getItem("previousPath"));
   const {
     data: {
       allContentfulSections,
