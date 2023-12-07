@@ -28,7 +28,7 @@ export const Name = styled(motion.div)`
     }
   }
 
-  span {
+  h2 {
     display: block;
     font-size: 22px;
     font-style: italic;

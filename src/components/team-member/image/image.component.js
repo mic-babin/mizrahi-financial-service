@@ -19,6 +19,7 @@ const Image = ({ image }) => {
             style={{ objectPosition: "center center" }}
             image={getImage(image.gatsbyImageData)}
             alt={image.description}
+            loading="eager"
           />
         )}
       </ImageWrapper>

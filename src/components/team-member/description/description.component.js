@@ -21,7 +21,7 @@ const Description = ({ teamMember }) => {
           }}
           viewport={{ once: true }}
         >
-          <h1>{name}</h1>,{title && <span>{title}</span>}
+          <h1>{name}</h1>,{title && <h2>{title}</h2>}
         </Name>
       )}
       {professionalTitles && (
