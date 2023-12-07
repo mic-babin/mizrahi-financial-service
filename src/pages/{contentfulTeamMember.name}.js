@@ -156,7 +156,7 @@ export const query = graphql`
         email
         linkedIn
         image {
-          gatsbyImageData(quality: 80)
+          gatsbyImageData(quality: 60)
           description
         }
         professionalTitles
