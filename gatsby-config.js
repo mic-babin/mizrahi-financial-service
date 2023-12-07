@@ -29,11 +29,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     "gatsby-plugin-netlify",
     `gatsby-plugin-sass`,
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.mizrahisf.com",
-        sitemap: "https://www.mizrahisf.com/sitemap.xml",
+        host: "https://mizrahisf.com",
+        sitemap: "https://mizrahisf.com/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },

@@ -21,12 +21,13 @@ export default function TeamMember(props) {
       allContentfulSections,
       allContentfulNavLinks,
       allContentfulFooter,
-      contentfulTeamMember,
+      allContentfulTeamMember,
     },
   } = props;
+  console.log(props.data);
 
-  const teamMember = contentfulTeamMember;
-  const image = contentfulTeamMember.image;
+  const teamMember = allContentfulTeamMember.nodes[0];
+  const image = teamMember.image;
   const navLinks = allContentfulNavLinks.edges[0].node.links;
   const menu = allContentfulSections.edges.filter(
     (section) => section.node.title === "TopNav"
@@ -142,21 +143,25 @@ export const query = graphql`
         }
       }
     }
-    contentfulTeamMember(name: { eq: $name }) {
-      id
-      name
-      title
-      bio {
-        raw
+    allContentfulTeamMember(
+      filter: { name: { eq: $name }, node_locale: { eq: $language } }
+    ) {
+      nodes {
+        id
+        name
+        title
+        bio {
+          raw
+        }
+        email
+        linkedIn
+        image {
+          gatsbyImageData(quality: 80)
+          description
+        }
+        professionalTitles
+        bioButton
       }
-      email
-      linkedIn
-      image {
-        gatsbyImageData(quality: 80)
-        description
-      }
-      professionalTitles
-      bioButton
     }
     allContentfulNavLinks(filter: { node_locale: { eq: $language } }) {
       edges {
