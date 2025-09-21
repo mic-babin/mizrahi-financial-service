@@ -64,6 +64,16 @@ const Footer = ({ navLinks, footer }) => {
                 {plaintesEtDiffrents.image.title}
                 <Arrow src={ArrowSrc} alt="left-arrow" />
               </LinkWrapper>
+              <LinkWrapper
+                className="text-decoration-underline"
+                as="a"
+                target="blank"
+                open
+                href="/Politique_Protection_des_renseignements_personnels_MSF.pdf         "
+              >
+                Politique de protection des renseignements personnels
+                <Arrow src={ArrowSrc} alt="left-arrow" />
+              </LinkWrapper>
               <Conception className="d-block d-sm-none">
                 {renderRichText(conception)}
               </Conception>
