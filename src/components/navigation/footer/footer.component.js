@@ -72,7 +72,7 @@ const Footer = ({ navLinks, footer }) => {
                 open
                 href="/Politique_Protection_des_renseignements_personnels_MSF.pdf         "
               >
-                Protection des renseignements
+                Renseignements personnels
                 <Arrow src={ArrowSrc} alt="left-arrow" />
               </LinkWrapper>
               <Conception className="d-block d-sm-none">
