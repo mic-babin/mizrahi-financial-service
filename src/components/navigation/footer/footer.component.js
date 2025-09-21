@@ -65,6 +65,7 @@ const Footer = ({ navLinks, footer }) => {
                 <Arrow src={ArrowSrc} alt="left-arrow" />
               </LinkWrapper>
               <br/>
+                <br/>
               <LinkWrapper
                 className="text-decoration-underline"
                 as="a"
